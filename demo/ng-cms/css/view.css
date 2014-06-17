@@ -1,0 +1,49 @@
+/*style.css*/
+.gridStyle {
+    min-height: 300px;
+}
+.alert{position: absolute;top: 0px; width: 100%;z-index: 1000}
+input[type="text"]:active,
+input[type="text"]:hover,
+select:active,
+select:focus{outline: none}
+select{font-size: 12px;height: 26px}
+input,button,select,textarea{font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif}
+
+/*view*/
+.right_top{padding:10px;background:#e6eef8;border-bottom: 1px solid #D7DDE6;}
+.search_zone{border:1px solid #D7DDE6;border-radius: 5px;background: #fff;margin-top: 3px}
+.search_zone_bar{width: 110px;height: 20px;background: url(../images/search_bar.png);background-repeat: no-repeat;margin-left: 2px;padding-top:3px;padding-left: 40px;}
+.search_zone_content{width: 100%;border-top:1px solid #D7DDE6;margin-top: 10px;}
+.search_form{margin-top: 13px;margin-left: 13px;}
+.search_form label{margin-left: 30px;font-size: 12px}
+.search_form input[type="text"]{width: 160px;margin-left: 2px;height: 14px;line-height: 14px}
+.search_form_btn_container{margin-top: 10px;margin-left: 148px}
+.search_form_btn{height: 30px;width: 80px;margin-left: 158px;}
+.btn-primary:hover{background:#2AABF0;}
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] 
+ {background-color: #1D8FCD;background-image: linear-gradient(to bottom,#2AABF0,#1D8FCD);background-repeat: repeat-x;border-color: #04c #04c #002a80;border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);}
+
+.right_content{width: 98%;margin-top: 10px;margin-left: 10px;}	
+.right_content_table{}
+.c-table th{font-weight: normal;padding: 0;padding-bottom: 8px;}
+.table_bar{width: 110px;_width:160px;height: 21px;background: url(../images/table_bar.png);background-repeat: no-repeat;margin-left: 2px;padding-top:2px;padding-left: 50px; float: left;}
+.t-btn{border-top: none;border-top-left-radius:0px;border-top-right-radius: 0px;padding-top:2px ;height: 22px;font-size: 12px;margin-left: 5px;position: relative;}
+/*.table_control_icon{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; }*/
+.t-btn span{display: block;float: right;margin-left: 2px;font-size: 12px}
+.icon_open{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; background:url(../images/table_control_icon_1.png);}
+.icon_close{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; background:url(../images/table_control_icon_2.png);}
+.icon_category{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; background:url(../images/table_control_icon_3.png);}
+.icon_add{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; background:url(../images/table_control_icon_4.png);}
+.icon_active{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; background-position: 0px -16px}
+.c-table tr td{text-align: center;}
+.table input[type="checkbox"]{width:auto;margin: 0;padding: 0}
+
+.table_footer{width: 98%;margin-left: 10px;}
+.table_footer_item{padding:0px 10px;height: 12px;display: block;color:#456D91; }
+.table_footer_item span{display: block;margin-top: -3px;}

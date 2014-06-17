@@ -1,0 +1,128 @@
+<article>
+	<div class="page-header">
+            <h1>工具提示 <small>bootstrap-tooltip.js</small></h1>
+          </div>
+
+
+          <h2>案例</h2>
+          <p>本插件受到Jason Frame开发的jQuery.tipsy插件的启发。Tooltips做了很多改进，例如不需要依赖图片，而是改用CSS3实现动画效果，用data属性存储标题信息。</p>
+          <p>出于性能方面的考虑，工具提示和弹出提示的data属性API是选择性加入的，也即是说<strong>你必要自己初始化他们</strong>。</p>
+          <p>将鼠标停悬在下面的链接上查看工具提示：</p>
+          <div class="bs-docs-example tooltip-demo">
+            <p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="A much longer tooltip belongs right here to demonstrate the max-width we apply.">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+            </p>
+          </div>
+
+          <h3>四个方向</h3>
+          <div class="bs-docs-example tooltip-demo">
+            <ul class="bs-docs-tooltip-examples">
+              <li><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</a></li>
+            </ul>
+          </div>
+
+
+          <h3>输入框组中的工具提示</h3>
+          <p>将工具提示和弹出提示与Bootstrap中的输入框组一同使用时，为了避免不必要的影响，你需要设置<code>container</code>（文档如下）：</p>
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>调用方式</h2>
+          <p>通过JavaScript触发工具提示：</p>
+          <pre class="prettyprint linenums">$('#example').tooltip(options)</pre>
+
+          <h3>选项</h3>
+          <p>可以通过data属性或JavaScript传递参数。对于data属性，将参数名附着到<code>data-</code>后面即可，例如, <code>data-animation=""</code>。</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">名称</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 50px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>animation</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>apply a css fade transition to the tooltip</td>
+             </tr>
+             <tr>
+               <td>html</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>Insert html into the tooltip. If false, jquery's <code>text</code> method will be used to insert content into the dom. Use text if you're worried about XSS attacks.</td>
+             </tr>
+             <tr>
+               <td>placement</td>
+               <td>string | function</td>
+               <td>'top'</td>
+               <td>how to position the tooltip - top | bottom | left | right</td>
+             </tr>
+             <tr>
+               <td>selector</td>
+               <td>string</td>
+               <td>false</td>
+               <td>If a selector is provided, tooltip objects will be delegated to the specified targets.</td>
+             </tr>
+             <tr>
+               <td>title</td>
+               <td>string | function</td>
+               <td>''</td>
+               <td>default title value if `title` tag isn't present</td>
+             </tr>
+             <tr>
+               <td>trigger</td>
+               <td>string</td>
+               <td>'hover focus'</td>
+               <td>how tooltip is triggered - click | hover | focus | manual. Note you case pass trigger mutliple, space seperated, trigger types.</td>
+             </tr>
+             <tr>
+               <td>delay</td>
+               <td>number | object</td>
+               <td>0</td>
+               <td>
+                <p>delay showing and hiding the tooltip (ms) - does not apply to manual trigger type</p>
+                <p>If a number is supplied, delay is applied to both hide/show</p>
+                <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+               </td>
+             </tr>
+             <tr>
+               <td>container</td>
+               <td>string | false</td>
+               <td>false</td>
+               <td>
+                <p>Appends the tooltip to a specific element <code>container: 'body'</code></p>
+               </td>
+             </tr>
+            </tbody>
+          </table>
+          <div class="alert alert-info">
+            <strong>注意！</strong>
+            可以针对单个工具提示指定单独的data属性。
+          </div>
+
+          <h3>标记</h3>
+          <pre class="prettyprint linenums">&lt;a href="#" data-toggle="tooltip" title="first tooltip"&gt;hover over me&lt;/a&gt;</pre>
+
+          <h3>方法</h3>
+          <h4>$().tooltip(options)</h4>
+          <p>对一组页面元素绑定一个工具提示处理器。</p>
+          <h4>.tooltip('show')</h4>
+          <p>弹出某个页面元素的工具提示。</p>
+          <pre class="prettyprint linenums">$('#element').tooltip('show')</pre>
+          <h4>.tooltip('hide')</h4>
+          <p>隐藏某个页面元素的工具提示。</p>
+          <pre class="prettyprint linenums">$('#element').tooltip('hide')</pre>
+          <h4>.tooltip('toggle')</h4>
+          <p>打开或隐藏某个页面元素的工具提示。</p>
+          <pre class="prettyprint linenums">$('#element').tooltip('toggle')</pre>
+          <h4>.tooltip('destroy')</h4>
+          <p>隐藏并销毁某个页面元素的工具提示。</p>
+          <pre class="prettyprint linenums">$('#element').tooltip('destroy')</pre>
+</article>

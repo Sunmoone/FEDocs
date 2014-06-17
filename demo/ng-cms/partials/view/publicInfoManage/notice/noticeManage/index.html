@@ -1,0 +1,84 @@
+<div ng-controller="myGridCtrl">
+		<div class="right_top">
+			<div class="search_zone">
+				<div class="search_zone_bar"><span>信息查询</span></div>
+				<div class="search_zone_content">
+					<form class="search_form form-inline">
+					  <fieldset>
+					    <label>姓名</label>
+					    <input type="text" ng-model="search.name">
+					    <label>编号</label>
+					    <input type="text" ng-model="search.number">
+					    <label>国籍</label>
+					    <input type="text" ng-model="search.nationality">
+					    <label>状态</label>
+					    <input type="text" ng-model="search.status">
+					  </fieldset>
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div class="right_content">
+			<table class="c-table table table-bordered table-striped table-hover">
+
+				<thead>
+					<tr>
+						<th colspan="4">
+							<div class="table_bar"><span>人员列表</span></div>
+							<div class="ml10">
+								<button class="btn t-btn" ng-click="add()"><i class="icon-plus"></i><span>新增</span></button>
+								<button class="btn t-btn" ng-click="modify()"><i class="icon-edit"></i><span>修改</span></button>
+								<button class="btn t-btn" ng-click="deleteSelected()"><i class="icon-minus"></i><span>删除</span></button>
+								<button class="btn t-btn" ng-click="switchOn()"><i class="icon-ok"></i><span>通过</span></button>
+								<button class="btn t-btn" ng-click="switchOff()"><i class="icon-remove"></i><span>不通过</span></button>
+							</div>
+						</th>
+					</tr>
+					<tr>
+						<td class="w50"><input type="checkbox" ng-click="allSelect()"></td>
+						<td ng-repeat='val in itemSequence.vals'>{{val}}</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items | filter: search">
+						<td><input type="checkbox" ng-checked="mySelections.indexOf(item) != -1" ng-click="itemSelect($index)"></td>
+						<td ng-repeat="key in itemSequence.keys">{{item[key]}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="table_footer">
+				<a href="#" class="table_footer_item fl border_r"><span>第一页</span></a>
+				<a href="#" class="table_footer_item fl border_r"><span>上一页</span></a>
+				<a href="#" class="table_footer_item fl border_r"><span>下一页</span></a>
+				<a href="#" class="table_footer_item fl "><span>最后一页</span></a>
+				<a href="#" class="table_footer_item fr"><span>当前第 1 页</span></a>
+				<a href="#" class="table_footer_item fr border_r"><span>共 1 页</span></a>
+				<a href="#" class="table_footer_item fr border_r"><span>共 3 条记录</span></a>
+			</div>
+		</div>
+	
+	</div>
+
+	<!-- <div ng-repeat="name in nameMap">{{name}}</div> -->
+
+<!-- modal template -->
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3>{{ModalTitle}}</h3>
+    </div>
+    <div class="modal-body">
+    	<form class="form-horizontal well" name="form" role="form" ng-submit="addPerson()">
+    		<div class="control-group" ng-repeat='i in itemSequence.keys'>
+    			<label  class="control-label">{{itemSequence.vals[$index]}}</label>
+    			<div class="controls">
+    				<input type="text" name="itemSequence.keys[$index]" ng-model="editItem[itemSequence.keys[$index]]">
+				</div>
+			</div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

@@ -1,0 +1,60 @@
+html,body{font-size: 12px;font-family: Microsoft Yahei;background: #F6F6F6;height: 100%;color: #323232;margin: 0;padding: 0}
+ul{list-style-type: none;}
+a{text-decoration: none;color: #555}
+a:hover{text-decoration: underline;}
+.pageContainer{width: 950px;margin: 0 auto;position: relative;background: #FFF;min-height: 100%;height: 100%;height: auto!important;overflow: visible;}
+#top{background: #ffffff;height: 183px}
+#main{}
+#footer{height: 30px;width: 950px;background: #F61B05;margin-top:20px;}
+#footer p{text-align: center;color: #FFF;line-height: 30px;}
+.topBanner{width: 950px;height: 148px;background: url(../images/topbg.png);}
+.topBanner h3{float: right;margin-right: 488px;margin-top: 70px;color: #680307;font-size: 22px;font-family: simSun;*display: inline;font-weight: bold;}
+.nav{height: 35px;background: #F61B05;overflow: hidden;}
+.nav ul{width: 900px;margin: 0 auto}
+.nav ul li{float: left;border-right: 1px solid #fff;padding: 0 12px;height: 12px;margin-top: 12px}.nav ul li a{display: block;margin-top:-11px;width: ;color: #FFFFFF;font-size: 14px;text-align: center;line-height: 33px}
+.span7{width: 270px;float: left;margin-right: 10px;*display: inline;margin-top: 10px}
+.span12{width: 470px;float: left;margin-right: 10px;*display: inline;margin-top: 10px}
+.span5{width: 190px;float: left;*display: inline;margin-top: 10px} 
+.span18{width: 710px;float: left;*display: inline;margin-top: 10px} 
+/**********24栏960布局 gap=2*10***************/
+.titleBar{background: url(../images/titleBar.gif);height: 28px;padding-top: 5px;background-repeat: repeat-x;}
+.titleBar h3{display: inline;font-weight: bold;float: left;font-size: 14px;height: 27px;margin-left: 10px;line-height: 27px}
+.titleBar ul.tabCtrl{display: inline;font-weight: bold;float: left;font-size: 14px;height: 27px;margin-left: 10px}
+.titleBar ul.tabCtrl li{float: left;margin-right: 5px}
+.titleBar ul.tabCtrl a{width: 131px;height: 27px;display: block;text-align: center;color: #6B5488;background: url(../images/tabbgB.png);line-height: 27px;}
+.titleBar ul.tabCtrl a:hover{background: url(../images/tabbgA.png);color: #FFFFFF;text-decoration: none}
+.titleBar ul.tabCtrl a.tabCtrl_active{background: url(../images/tabbgA.png);color: #FFFFFF;text-decoration: none}
+.titleBar a.more{float: right;position: relative;top: 5px;right: 10px;color: #929292}
+.tabCont a.more{right:10px;color: #929292;position: absolute;top: -32px;}
+.columnList, .columnArticle{border: 0px solid #E3E3E3;padding: 10px}
+.columnListA{background: url(../images/columnbg2.png);background-repeat: repeat-x;}
+.tabCont{display: none;position: relative;}
+.columnList ul li {height: 22px;padding-top: 5px;padding-left: 15px;background: url(../images/arrow.gif);background-position: left center;background-repeat: no-repeat;}
+.columnList ul li a{float: left;}
+.columnList ul li span{float: right}
+
+.links{background: url(../images/lk-bg.jpg);background-repeat:no-repeat;color: #A22E2F;float: right}
+.links h3{margin-top: 26px;text-align: center;font-size: 16px;}
+.links ul{margin-top: 26px;}
+.links ul li a{display: block;height: 71px;line-height:71px;text-decoration: none;font-size: 16px;color: #A22E2F;width: 143px;margin-left: 32px;text-align: center;font-weight: bold;}
+/***************IE 6 position******************/
+.links li a.link1:hover{background-position: 64px 6px;}
+.links li a.link2:hover{background-position: 64px -34px;}
+.links li a.link3:hover{background-position: 64px -74px;}
+.links li a.link4:hover{background-position: 64px -114px;}
+.links li a.link5:hover{background-position: 64px -154px;}
+.links li a.link6:hover{background-position: 64px -194px;}
+/***************IE 6 position******************/
+.links li a span{line-height: 42px;margin-left: 115px;font-size: 16px;font-weight: bold;}
+.l-page .leftNav{float: left;width: 230px;*display: inline;background: #e7e7e7;*height: 300px}
+.l-page .leftNav h3{text-align: center;font-weight: bold;color: #FFF;font-size: 16px;background: #F61B05;height: 30px;line-height: 30px}
+.l-page .span18{background: #fff;border-left: 10px solid #fff;margin-top: 0;padding-bottom:40px;}
+.l-page #main{background: #e7e7e7;margin-top: 10px;padding-bottom:0;}
+.columnArticle{padding: 10px}
+.columnArticle h3{text-align: center;margin-top: 10px;margin-bottom: 10px}
+.columnArticle p{text-indent: 2em;line-height: 24px}
+
+.bt-banner{text-align:center;background:#ddd;padding:8px;border:1px solid #bbb;margin-top:20px;}
+.bt-banner img{width:450px;}
+.indexpage .columnList{padding-bottom:0;}
+.indexpage .columnList ul li {padding-top:2px;}

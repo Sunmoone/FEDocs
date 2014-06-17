@@ -1,0 +1,12 @@
+[	
+	{"name": "姓名", "number": "编号", "nationality": "国籍", "birthday": "出生日期", "score": "得分", "status": "状态"},
+	{"name": "Anna", "number": 34114, "nationality": "America", "birthday": "1980-05-14", "score": 6000, "status": false},
+	{"name": "Bob", "number": 34115, "nationality": "China", "birthday": "1980-05-14", "score": 6000, "status": true},
+	{"name": "Moroni", "number": 34113, "nationality": "America", "birthday": "1978-04-12", "score": 5000, "status": true},
+	{"name": "Moris", "number": 34131, "nationality": "Japan", "birthday": "1972-07-30", "score": 5000, "status": false},
+	{"name": "Nicolas", "number": 34216, "nationality": "Japan", "birthday": "1973-04-11", "score": 5000, "status": true},
+	{"name": "Tiancum", "number": 34014, "nationality": "China", "birthday": "1988-01-25", "score": 70000, "status": false},
+	{"name": "Jacob", "number": 34106, "nationality": "Japan", "birthday": "1968-09-17", "score": 40000, "status": true},
+	{"name": "Nephi", "number": 34105, "nationality": "China", "birthday": "1978-04-10", "score": 50000 , "status": false},
+	{"name": "Enos", "number": 34118, "nationality": "China", "birthday": "1974-04-12", "score": 30000 , "status": true}
+]

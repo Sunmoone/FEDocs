@@ -1,0 +1,93 @@
+<article class="m-article">
+	<h3>HTML 书写规范 </h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>语法要点</dt>
+		<dd>
+			<ul>
+				<li>对于属性的定义，确保全部使用双引号，因为单引号最终也会被转换为双引号。</li>
+				<li>不要在自闭和（self-closing）元素的尾部添加斜线 。</li>
+				<li>不要省略可选的结束标签（closing tag）（例如，&lt;/li&gt; 或 &lt;/body&gt;）。</li>
+				<li>用两个空格来代替制表符（tab） 以保证在所有环境下获得一致展现的方法。</li>
+				<li>文档声明(&lt;!doctylie html&gt;)不可省略，缺失将导致IE以杂项模式渲染</li>
+				<li>为 html 根元素指定 lang 属性，从而为文档设置正确的语言。</li>
+				<li>IE 支持通过特定的 （&lt;meta&gt;） 标签来确定绘制当前页面所应该采用的 IE 版本。除非有强烈的特殊需求，否则最好是设置为 edge mode，从而通知 IE 采用其所支持的最新的模式。</li>
+				<li>通过明确声明字符编码，能够确保浏览器快速并容易的判断页面内容的渲染方式。这样做的好处是，可以避免在 HTML 中使用字符实体标记（character entity），从而全部与文档编码一致（一般采用 UTF-8 编码）。</li>
+			</ul>
+		</dd>
+		<dt>最简结构</dt>
+		<dd>
+			<div>
+				<pre class="prettyprint linenums">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge"&gt;
+		&lt;title&gt;Document&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			</div>
+		</dd>		
+		<dt>属性顺序</dt>
+		<dd>
+			<p>HTML 属性应当按照以下给出的顺序依次排列，确保代码的易读性。</p>
+			<ol>
+				<li>class</li>
+				<li>id, name</li>
+				<li>data-*</li>
+				<li>src, for, type, href</li>
+				<li>title, alt</li>
+				<li>aria-*, role</li>
+			</ol>
+			<p>class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。</p>
+			<div>
+				<pre class="prettyprint linenums">
+&lt;a class="..." id="..." data-modal="toggle" href="#"&gt;
+  Example link
+&lt;/a&gt;
+
+&lt;input class="form-control" type="text"&gt;
+
+&lt;img src="..." alt="..."&gt;
+				</pre>
+			</div>
+		</dd>
+		<dt>布尔型属性</dt>
+		<dd>
+			<p>布尔型属性可以在声明时不赋值。</p>
+			<p>元素的布尔型属性如果存在，就是 true，如果不存在，就是 false。</p>
+			<div>
+				<pre class="prettyprint linenums">
+&lt;input type="text" disabled&gt;
+
+&lt;input type="checkbox" value="1" checked&gt;
+
+&lt;select&gt;
+  &lt;option value="1" selected&gt;1&lt;/option&gt;
+&lt;/select&gt;
+				</pre>
+			</div>
+		</dd>
+		<dt>减少嵌套</dt>
+		<dd>
+			<p>编写 HTML 代码时，尽量避免多余的父元素。</p>
+			<p>元素的布尔型属性如果存在，就是 true，如果不存在，就是 false。</p>
+			<div>
+				<pre class="prettyprint linenums">
+<!-- Bad -->
+&lt;span class="avatar"&gt;
+  &lt;img src="..."&gt;
+&lt;/span&gt;
+
+<!-- Better -->
+&lt;img class="avatar" src="..."&gt;
+				</pre>
+			</div>
+		</dd>
+	</dl>
+</article>

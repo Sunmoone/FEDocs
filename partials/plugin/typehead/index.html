@@ -1,0 +1,87 @@
+<article>
+	<div class="page-header">
+              <h1>输入提示<small>bootstrap-typeahead.js</small></h1>
+            </div>
+
+
+            <h2>案例</h2>
+            <p>简单，易于扩展，可迅速地为表单中的文本输入框创建优雅的输入提示。</p>
+            <div class="bs-docs-example" style="background-color: #f5f5f5;">
+              <input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+            </div>
+            <pre class="prettyprint linenums">&lt;input type="text" data-provide="typeahead"&gt;</pre>
+            <p>需要设置<code>autocomplete="off"</code>以阻止浏览器的默认提示菜单遮盖Bootstrap的输入提示下拉菜单。</p>
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>调用方式</h2>
+
+            <h3>通过data属性</h3>
+            <p>通过添加data属性给页面元素注册输入提示功能，就像上面的案例一样。</p>
+
+            <h3>通过JavaScript</h3>
+            <p>手动调用输入提示：</p>
+            <pre class="prettyprint linenums">$('.typeahead').typeahead()</pre>
+
+            <h3>选项</h3>
+            <p>可以通过data属性或JavaScript传递参数。对于data属性，将参数名附着到<code>data-</code>之后，例如<code>data-source=""</code>。</p>
+            <table class="table table-bordered table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 100px;">名称</th>
+                 <th style="width: 50px;">类型</th>
+                 <th style="width: 100px;">默认值</th>
+                 <th>描述</th>
+               </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <td>source</td>
+                 <td>array, function</td>
+                 <td>[ ]</td>
+                 <td>用于查询的数据源。可以是一个字符串数组或是一个函数。函数会接收到两个参数，分别是输入域中的 <code>query</code>值和<code>process</code>回调函数。函数可能会被同步调用，直接返回数据源；或者异步调用，通过<code>process</code>回调函数的唯一一个参数。</td>
+               </tr>
+               <tr>
+                 <td>items</td>
+                 <td>number</td>
+                 <td>8</td>
+                 <td>下拉菜单中显示的最大的条目数。</td>
+               </tr>
+               <tr>
+                 <td>minLength</td>
+                 <td>number</td>
+                 <td>1</td>
+                 <td>触发提示所需的最小字符个数。</td>
+               </tr>
+               <tr>
+                 <td>matcher</td>
+                 <td>function</td>
+                 <td>case insensitive</td>
+                 <td>该函数用于决定某个查询是否匹配某个条目。它接受唯一一个参数<code>item</code>，表示当前需要测试的条目。 使用<code>this.query</code>引用当前查询字符串。如果匹配查询，就返回一个布尔值<code>true</code> 。</td>
+               </tr>
+               <tr>
+                 <td>sorter</td>
+                 <td>function</td>
+                 <td>exact match,<br> case sensitive,<br> case insensitive</td>
+                 <td>该函数用来排序提示项。它接受唯一一个参数<code>items</code>，并且其变量范围在typeahead实例内。使用<code>this.query</code>引用当前查询字符串。</td>
+               </tr>
+               <tr>
+                 <td>updater</td>
+                 <td>function</td>
+                 <td>returns selected item</td>
+                 <td>此方法用于返回选中的条目。其接受一个参数<code>item</code>，并且其变量范围在typeahead实例内。</td>
+               </tr>
+               <tr>
+                 <td>highlighter</td>
+                 <td>function</td>
+                 <td>highlights all default matches</td>
+                 <td>该函数用来高亮自动完成的结果。 它接受唯一一个参数<code>item</code>，并且变量范围在typeahead实例内。应该返回html。</td>
+               </tr>
+              </tbody>
+            </table>
+
+            <h3>方法</h3>
+            <h4>.typeahead(options)</h4>
+            <p>为输入框初始化输入提示功能。</p>
+</article>

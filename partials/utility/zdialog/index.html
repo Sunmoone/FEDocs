@@ -1,0 +1,51 @@
+<section class="m-article">
+	<h3>zDialog弹窗改进</h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>跨域情况下Parent Window无法引用</dt>
+		<dd>
+		line 67 : 
+<pre class="prettyprint linenums">
+var $topWindow = function () {
+    var parentWin = window;
+  + try()  
+    while (parentWin != parentWin.parent) {
+        if (parentWin.parent.document.getElementsByTagName("iframe").length > 0) break;
+        parentWin = parentWin.parent;
+    }
+    return parentWin;
+};</pre>
+		</dd>
+	<dd>
+	修改为
+<pre class="prettyprint linenums"> var $topWindow = function () {
+ var parentWin = window;
+ try{
+   var p=window.parent.document.title;
+   while (parentWin != parentWin.parent) {
+      if (parentWin.parent.document.getElementsByTagName("iframe").length > 0) break;
+      parentWin = parentWin.parent;
+   }
+   return parentWin;
+ }
+ catch(err){
+   return window;
+ }
+};</pre>
+	</dd>
+	<dt>IE8 兼容模式判断</dt>
+	<dd>
+		通过UserAgent无法正确判断兼容文档模式，ie7-不支持<code>position:fixed</code>，在line 328会出错，
+		<br>
+		line 17:
+		<pre><code>var ielt7 = isIE && ieVer&lt;7;</code></pre>
+		修改为
+		<pre><code>var ielt7 = isIE && ieVer&lt;7 || document.compat == "BackCompat"</code></pre>
+	</dd>
+	</dl>
+	<dt>增加最大化功能</dt>
+	<dd>
+		与Windows窗口最大化类似，定义<code>dialog.AllowZoom = true</code>启用。
+	</dd>
+	<p>通过右键另存为下载 <a href="download/js/zDialog-plus.js" target="_blank">zDialog-plus.js</a>。</p>
+</section>

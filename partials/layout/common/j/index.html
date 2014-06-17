@@ -1,0 +1,69 @@
+<article class="m-article">
+	<h3>常用布局</h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>图片居中溢出隐藏</dt>
+		<dd>
+			<style type="text/css">
+			.m-demo{position:relative;width:300px;height:300px;overflow:hidden;border:1px solid #ddd;}
+			.m-demo p{position:absolute;top:50%;left:50%;margin:0;padding:0;}
+			.m-demo img{position:absolute;top:-50%;left:-50%;display:block;}
+			.m-demo img.hidden{visibility:hidden;position:static;}
+			
+			/* 预览辅助样式 */
+			img{max-width: none;}
+			.m-demo{float:left;display:inline;margin-left:20px;}
+		</style>
+			<div class="f-cb">
+				<div class="m-demo">
+				    <p>
+				        <img src="{{ImagePATH}}/s/1.jpg" class="hidden"/>
+				        <img src="{{ImagePATH}}/s/1.jpg" alt=""/>
+				    </p>
+				</div>
+				<div class="m-demo">
+				    <p>
+				        <img src="{{ImagePATH}}/m/1.jpg" class="hidden"/>
+				        <img src="{{ImagePATH}}/m/1.jpg" alt=""/>
+				    </p>
+				</div>
+				<div class="m-demo">
+				    <p>
+				        <img src="{{ImagePATH}}/l/1.jpg" class="hidden"/>
+				        <img src="{{ImagePATH}}/l/1.jpg" alt=""/>
+				    </p>
+				</div>
+			</div>
+		</dd>
+		<dt>代码</dt>
+		<dd>
+			<pre  class="prettyprint linenums">
+ /* 图片居中溢出隐藏 */
+&lt;style&gt;
+.m-demo{position:relative;width:300px;height:300px;overflow:hidden;border:1px solid #ddd;}
+.m-demo p{position:absolute;top:50%;left:50%;margin:0;padding:0;}
+.m-demo img{position:absolute;top:-50%;left:-50%;display:block;}
+.m-demo img.hidden{visibility:hidden;position:static;}
+&lt;/style&gt;
+&lt;div class="m-demo"&gt;
+    &lt;p&gt;
+        &lt;img src="{{ImagePATH}}/s/1.jpg" class="hidden"&gt;
+        &lt;img src="{{ImagePATH}}/s/1.jpg" alt=""&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="m-demo"&gt;
+    &lt;p&gt;
+        &lt;img src="{{ImagePATH}}/m/1.jpg" class="hidden"&gt;
+        &lt;img src="{{ImagePATH}}/m/1.jpg" alt=""&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="m-demo"&gt;
+    &lt;p&gt;
+        &lt;img src="{{ImagePATH}}/l/1.jpg" class="hidden"&gt;
+        &lt;img src="{{ImagePATH}}/l/1.jpg" alt=""&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+
+		</dd>
+	</dl>
+</article>

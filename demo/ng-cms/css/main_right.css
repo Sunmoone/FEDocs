@@ -1,0 +1,50 @@
+		body{margin: 0;padding:0;font-size: 12px;font-family: Microsoft YaHei;line-height: auto}
+		a,a:hover,a:visited,a:active,a:focus{text-decoration: none;color:#000;outline: none;}
+		input:focus{outline: none!important;}
+		.btn:focus{outline: none;}
+		.table td{padding: 4px;}
+		label{margin-bottom: 0px;font-size: 12px; }
+		.border_r{border-right: 1px solid #456D91}
+		.table {font-size: 12px;}
+
+		.right_top{height: 128px;padding:10px;background:#e6eef8;border-bottom: 1px solid #D7DDE6;}
+		.search_zone{height: 122px;width: 99.5%;border:1px solid #D7DDE6;border-radius: 5px;background: #fff;margin-top: 3px}
+		.search_zone_bar{width: 110px;_width:150px;height: 20px;background: url(../images/search_bar.png);background-repeat: no-repeat;margin-left: 2px;padding-top:3px;padding-left: 40px;}
+		.search_zone_content{width: 100%;height: 88px;border-top:1px solid #D7DDE6;margin-top: 10px;}
+		.search_form{margin-top: 13px;margin-left: 13px;}
+		.search_form label{margin-left: 30px;}
+		.search_form input{width: 160px;margin-left: 2px;}
+		.search_form_btn_container{margin-top: 10px;margin-left: 148px}
+		.search_form_btn{height: 30px;width: 80px;margin-left: 158px;}
+		.btn-primary:hover{background:#2AABF0;}
+		.btn-primary,
+		.btn-primary:focus,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] 
+		 {background-color: #1D8FCD;background-image: linear-gradient(to bottom,#2AABF0,#1D8FCD);background-repeat: repeat-x;border-color: #04c #04c #002a80;border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);}
+
+
+		.right_content{width: 98%;margin-top: 10px;margin-left: 10px;}	
+		.right_content_table{}
+		.student_info_table th{font-weight: normal;padding: 0;padding-bottom: 8px;}
+		.table_bar{width: 110px;_width:160px;height: 21px;background: url(../images/table_bar.png);background-repeat: no-repeat;margin-left: 2px;padding-top:2px;padding-left: 50px; float: left;}
+		.table_button{border-top: none;border-top-left-radius:0px;border-top-right-radius: 0px;padding-top:2px ;height: 22px;width:95px; font-size: 12px;margin-left: 5px;position: relative;}
+		.table_control_icon{position: absolute;top: 2px;left: 15px;width:19px;height: 16px;background-repeat: no-repeat;background-position: 0px 0px; }
+		.table_button span{display: block;float: right;margin-top:-1px;margin-left: 2px; }
+		.table_control_icon_1{background:url(../images/table_control_icon_1.png);}
+		.table_control_icon_2{background:url(../images/table_control_icon_2.png);}
+		.table_control_icon_3{background:url(../images/table_control_icon_3.png);}
+		.table_control_icon_4{background:url(../images/table_control_icon_4.png);}
+		.table_control_icon_actived{background-position: 0px -16px}
+		.table_row_1{width: 25%;}
+		.student_info_table tbody tr td{text-align: center;}
+		.table_row_1 label{width: 55px;_width:100px;margin-left: 100px}
+		.check_all {_width: 20px;}
+		.check_one{display: block;margin-left: 100px!important;margin-top: 4px;}
+
+		.table_footer{width: 98%;margin-left: 10px;}
+		.table_footer_item{padding:0px 10px;height: 12px;display: block;color:#456D91; }
+		.table_footer_item span{display: block;margin-top: -3px;}
+		.footer{height:20px;width: 100%;position: absolute;bottom: 0px;background: url(../images/footer_bg.png);background-position: center;background-repeat: no-repeat;}

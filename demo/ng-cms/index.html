@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="cms">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap-v2.css">
+	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<link rel="stylesheet" type="text/css" href="./css/view.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="./lib/angular/angular.js"></script>
+	<script src="./lib/angular/angular-resource.js"></script>
+	<script src="./lib/angular/angular-route.js"></script>
+    <script src="./lib/angular-ui/ui-bootstrap-tpls-0.10.0.js"></script>
+
+	<script src="./js/resetView.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/services.js"></script>
+	<script src="./js/directives.js"></script>
+	<script src="./js/filters.js"></script>
+	<script src="./js/controllers.js"></script>
+
+
+</head>
+<body  ng-controller="NavCtrl">
+<div class="top">
+	<div class="top_left">
+		<div class="brand">
+			<div class="brand_inner">远程教学平台</div>
+		</div>
+	</div>
+	
+	<div class="top_nav">
+		<ul class="clearfix top_nav_items">
+				<!-- top nav -->
+			<li ng-repeat="nav in navs">
+				<a href="#/{{currNavId}}/{{currLeftNavId}}/{{currLeftNavSubId}}" ng-click="toggleLeft(nav,$index)" class="top_nav_item {{nav.icon}}" ng-class="{top_nav_item_active:$parent.activeNum_1===$index}">{{nav.displayName}}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top_right">
+		<div class="top_right_person">
+			<a href="#">个人信息维护</a>
+		</div>
+		<div class="top_right_school">
+			<a href="" target="_blank">学校网站</a>
+		</div>
+		<div class="top_right_logout">
+			<a href="#" onclick="logOut()">注销</a>
+		</div>
+		<div class="top_right_info">
+			<div>
+				<span class="user_category">系统管理员</span>
+				您好，欢迎光临！
+			</div>
+			<div class="date-info">今天是2014年4月1日 星期二</div>
+		</div>
+		<div class="top_right_admin"></div>
+
+	</div>
+</div>	
+<div class="main">
+	<div class="main_left">
+		<div class="left_nav">
+			<ul class="left_nav_items">
+				<!-- left nav -->
+				<li ng-repeat="leftNav in leftNavs">
+					<a href="#/{{currNavId}}/{{currLeftNavId}}/{{currLeftNavSubId}}" ng-click="toggleLeftSub(leftNav,$index)" class="left_nav_item {{leftNav.icon}}" ng-class="{left_nav_item_active:$parent.activeNum_2===$index}">{{leftNav.displayName}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="left_nav_sub">
+			<ul class="left_nav_sub_items">
+				<!-- left sub nav -->
+				<li ng-repeat="leftNavSub in leftNavSubs">
+					<a href="#/{{currNavId}}/{{currLeftNavId}}/{{leftNavSub.id}}/{{leftNavSub.template}}" ng-click="toggleView(leftNavSub,$index)" class="left_nav_sub_item left_nav_sub_item_{{$index+1}}" ng-class="{left_nav_sub_item_active:$parent.activeNum_3===$index}">{{leftNavSub.displayName}}</a>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+	<div class="main_right">
+		<div id="view">
+				<div ng-view></div>	
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<p>AngularJS内容管理平台</p>
+</div>
+</body>
+</html>

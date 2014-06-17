@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/stuCenter.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			(function($){
+				$.fn.tabable = function(){
+					var _this = this;
+					var len = $(_this).find(".tabCtrl li").length;
+					for(var i = 1;i<=len;i++){
+						$(_this).find(".tabCtrl"+i).on("mouseenter", (function(n){
+								return function(){
+										$(_this).find(".tabCtrl_active").removeClass("tabCtrl_active");
+										$(_this).find(".tabCont").hide();
+										$(this).addClass("tabCtrl_active");
+										$(_this).find(".tabCont"+n).show();
+									}
+							})(i))
+					}
+					$(_this).find(".tabCtrl1").trigger("mouseenter");
+				}
+			})(jQuery)
+			$(".tabable1").tabable();
+			$(".tabable2").tabable();
+			
+		})
+	</script>
+</head>
+<body>
+<div id="mainCont" class="clearfix">
+	<div id='mainCont_left'>
+		<div class="colTitle"><h4>用户登录</h4></div>
+		<div class="commonCol" style="border-top:1px solid #E5CECE;padding:10px;">
+			<div class="columUnit clearfix" style="*clear:both;*height:120px">
+				<div class="userPic fl"></div>
+				<div class="userWelcome fl">
+					<div class="maroon">欢迎您</div>
+					<div class="mt5"><span>冯志新</span><span class="ml10">同志</span></div>
+					<div  class="mt5"><span>我的个性签名</span><img style="position:relative;top:3px;left:5px" class="ml5" src="images/edit.png"></div>
+					<div class="pa bottom0"><a href="###" class="uploadPic">上传图片</a></div>
+				</div>
+			</div>
+			<div class="columUnit mt20 clearfix" style="*clear:both;*height:100px;*margin-top:20px">
+				<p>您2013年度已获得<span class='textred'> [41] </span>学分</p>
+				<ul class="btnGroup1 mt10 clearfix">
+					<li><a href="###"><i class="triangle"></i>个人资料</a></li>
+					<li><a href="###"><i class="triangle"></i>个人资料</a></li>
+					<li><a href="###"><i class="triangle"></i>个人资料</a></li>
+					<li><a href="###"><i class="triangle"></i>个人资料</a></li>
+				</ul>
+			</div>
+			<div class="columUnit clearfix" style="border-bottom:none;clear:both;*padding-bottom:40px">
+				<ul class="btnGroup2 mt10">
+					<li><i class="btnGroup2_icon1"></i><a href="###">好友评论：<span> 0 </span></a></li>
+					<li><i class="btnGroup2_icon2"></i><a href="###">短信息：<span> 0 </span></a></li>
+					<li><i class="btnGroup2_icon3"></i><a href="###">好友博文：<span> 0 </span></a></li>
+					<li><i class="btnGroup2_icon4"></i><a href="###">同学留言：<span class="textred"> 1 </span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="colTitle"><h4>问卷调查</h4><a class="more" href="###">进入调查</a></div>
+		<div class="tabable1">
+			<div class="colTitle" style="border-top:1px solid #E5CECE;*padding:0px;*padding-left:10px"><h4>精品推荐</h4>
+				<ul class="tabCtrl">
+						<li><a class="tabCtrl1"  style="border:none" href="###">课程</a></li>
+						<li><a class="tabCtrl2" href="###">班级</a></li>
+						<li><a class="tabCtrl3" href="###">公共资源</a></li>
+					</ul>
+			</div>
+			<div class="commonCol">
+				<table class="stuTable tabCont tabCont1">
+					<colgroup>
+						<col width="80%"></col>
+						<col width="20%"></col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>资源名称</th>
+							<th>点击量</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+							<td class="maroon">1999</td>
+						</tr><tr class="odd">
+							<td><a href="###">易中天品三国之逆流而上</a></td>
+							<td class="maroon">1504</td>
+						</tr><tr>
+							<td><a href="###">沉思录</a></td>
+							<td class="maroon">1320</td>
+						</tr><tr class="odd">
+							<td><a href="###">求医不如求己的163种常识</a></td>
+							<td class="maroon">1190</td>
+						</tr><tr>
+							<td><a href="###">薪火相传说收藏</a></td>
+							<td class="maroon">975</td>
+						</tr><tr class="odd">
+							<td><a href="###">人际交往法则（上）</a></td>
+							<td class="maroon">965</td>
+						</tr><tr>
+							<td><a href="###">现代办公文书写作</a></td>
+							<td class="maroon">860</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="stuTable tabCont tabCont2">
+					<colgroup>
+						<col width="80%"></col>
+						<col width="20%"></col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>资源名称</th>
+							<th>点击量</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="###">沉思录</a></td>
+							<td class="maroon">1320</td>
+						</tr><tr class="odd">
+							<td><a href="###">求医不如求己的163种常识</a></td>
+							<td class="maroon">1190</td>
+						</tr><tr>
+							<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+							<td class="maroon">1999</td>
+						</tr><tr class="odd">
+							<td><a href="###">易中天品三国之逆流而上</a></td>
+							<td class="maroon">1504</td>
+						</tr><tr>
+							<td><a href="###">薪火相传说收藏</a></td>
+							<td class="maroon">975</td>
+						</tr><tr class="odd">
+							<td><a href="###">人际交往法则（上）</a></td>
+							<td class="maroon">965</td>
+						</tr><tr>
+							<td><a href="###">现代办公文书写作</a></td>
+							<td class="maroon">860</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="stuTable tabCont tabCont3">
+					<colgroup>
+						<col width="80%"></col>
+						<col width="20%"></col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>资源名称</th>
+							<th>点击量</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="###">薪火相传说收藏</a></td>
+							<td class="maroon">975</td>
+						</tr><tr class="odd">
+							<td><a href="###">人际交往法则（上）</a></td>
+							<td class="maroon">965</td>
+						</tr><tr>
+							<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+							<td class="maroon">1999</td>
+						</tr><tr class="odd">
+							<td><a href="###">易中天品三国之逆流而上</a></td>
+							<td class="maroon">1504</td>
+						</tr><tr>
+							<td><a href="###">沉思录</a></td>
+							<td class="maroon">1320</td>
+						</tr><tr class="odd">
+							<td><a href="###">求医不如求己的163种常识</a></td>
+							<td class="maroon">1190</td>
+						</tr><tr>
+							<td><a href="###">现代办公文书写作</a></td>
+							<td class="maroon">860</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>	
+	</div>
+	<div id='mainCont_right'>
+		<div id="notice">
+			<div class="colTitle2"><h4>培训通知</h4></div>
+			<table class="stuTable">
+				<colgroup>
+					<col width="80%"></col>
+					<col width="20%"></col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+						<td class="maroon">2013-11-11</td>
+					</tr><tr class="odd">
+						<td><a href="###">易中天品三国之逆流而上</a></td>
+						<td class="maroon">2013-11-10</td>
+					</tr><tr>
+						<td><a href="###">沉思录</a></td>
+						<td class="maroon">2013-11-6</td>
+					</tr><tr class="odd">
+						<td><a href="###">求医不如求己的163种常识</a></td>
+						<td class="maroon">2013-10-11</td>
+					</tr><tr>
+						<td><a href="###">薪火相传说收藏</a></td>
+						<td class="maroon">2013-10-24</td>
+					</tr><tr class="odd">
+						<td><a href="###">计算机结构化组成</a></td>
+						<td class="maroon">2013-10-11</td>
+					</tr><tr>
+						<td><a href="###">Objective-C面向对象编程</a></td>
+						<td class="maroon">2013-9-6</td>
+					</tr><tr class="odd">
+						<td><a href="###">javascript编程模式与语言精粹</a></td>
+						<td class="maroon">2013-9-11</td>
+					</tr><tr>
+						<td><a href="###">java编程思想</a></td>
+						<td class="maroon">2013-9-24</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="courseOnline">
+			<div class="colTitle2"><h4>在线学习</h4>
+				<div class="fr f12" style="*margin-top:0px">
+					<select>
+						<option>课程名称</option>
+						<option>课程ID</option>
+						<option>课程讲师</option>
+					</select>
+					<input type="text" />
+					<input class="searchBtn" type="submit" value="搜索" />
+					<span>通过年份：</span>
+					<select>
+						<option>2013年</option>
+						<option>2012年</option>
+						<option>2011年</option>
+					</select>
+				</div>
+			</div>
+			<table class="stuTable">
+				<thead>
+					<tr>
+						<th style="border:none">课件名称</th>
+						<th>类型</th>
+						<th>学时</th>
+						<th>学习</th>
+						<th>考试</th>
+						<th>评论</th>
+						<th>论文上传</th>
+						<th>删除</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="firstTd"><a href="###">【选修课】危机决策与领导力对“协调发展”的正确解读</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr class="odd">
+						<td class="firstTd"><a href="###">【选修课】中国三大战略规划：人才、教育、科技</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+					</tr><tr>
+						<td class="firstTd"><a href="###">【选修课】对“协调发展”的正确解读</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+					</tr><tr class="odd">
+						<td class="firstTd"><a href="###">【选修课】努力形成真抓实干、务实求实、坚持群众为中心</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr>
+						<td class="firstTd"><a href="###">【选修课】群众路线蕴含于常态化的工作中</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr class="odd">
+						<td class="firstTd"><a href="###">【选修课】党政机关干部人事制度改革及评析</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr>
+						<td class="firstTd"><a href="###">【选修课】难平的路</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr class="odd">
+						<td class="firstTd"><a href="###">【选修课】物联网相关产业发展</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr>
+						<td class="firstTd"><a href="###">【选修课】领导方略与管理心理</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr><tr class="odd">
+						<td class="firstTd"><a href="###">【选修课】学习能力提升</a></td>
+						<td>自选</td>
+						<td>40</td>
+						<td><a href="###"><img src="images/tableIcon1.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon3.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+						<td><a href="###"><img src="images/tableIcon2.png"></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="tablefooter clearfix">
+				<ul>
+					<li>第 1 页</li>
+					<li>共 3 页</li>
+					<li>共 25 门课程</li>
+					<li><a href="###">首页</a></li>
+					<li><a href="###">上一页</a></li>
+					<li><a href="###">下一页</a></li>
+					<li><a href="###">末页</a></li>
+					<li><span class="fl">第&nbsp;&nbsp;</span><input class="fl ml5 mr5" style="*width:20px" type="text"> <span class="fl">&nbsp;&nbsp;页</span></li>
+					<li><input type="button" style="*width:50px" value="跳转"></li>
+				</ul>
+			</div>
+		</div>
+		<div id="favorite" class="tabable2">
+			<div class="colTitle2"><h4>&nbsp;&nbsp;收藏夹&nbsp;</h4>
+				<ul class="tabCtrl">
+					<li><a class="tabCtrl1"  style="border:none" href="###"><i class="videoIcon"></i>视频·直播</a></li>
+					<li><a class="tabCtrl2" href="###"><i class="bookIcon"></i>图书·期刊</a></li>
+					<li><a class="tabCtrl3" href="###"><i class="blogIcon"></i>文献·博客</a></li>
+				</ul>
+				<a class="more" href="###">更多</a>
+			</div>	
+			<table class="stuTable tabCont tabCont1">
+				<colgroup>
+					<col width="80%"></col>
+					<col width="20%" style="text-align:right"></col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">易中天品三国之逆流而上</a></td>
+						<td class="maroon">2013-9-13</td>
+					</tr><tr>
+						<td><a href="###">沉思录</a></td>
+						<td class="maroon">2013-9-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">求医不如求己的163种常识</a></td>
+						<td class="maroon">2013-6-13</td>
+					</tr><tr>
+						<td><a href="###">薪火相传说收藏</a></td>
+						<td class="maroon">2013-3-15</td>
+					</tr><tr class="odd">
+						<td><a href="###">人际交往法则（上）</a></td>
+						<td class="maroon">2013-1-13</td>
+					</tr><tr>
+						<td><a href="###">现代办公文书写作</a></td>
+						<td class="maroon">2013-1-3</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="stuTable tabCont tabCont2">
+				<colgroup>
+					<col width="80%"></col>
+					<col width="20%" style="text-align:right"></col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><a href="###">沉思录</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">求医不如求己的163种常识</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr>
+						<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">易中天品三国之逆流而上</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr>
+						<td><a href="###">薪火相传说收藏</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">人际交往法则（上）</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr>
+						<td><a href="###">现代办公文书写作</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="stuTable tabCont tabCont3">
+				<colgroup>
+					<col width="80%"></col>
+					<col width="20%" style="text-align:right"></col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><a href="###">薪火相传说收藏</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">人际交往法则（上）</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr>
+						<td><a href="###">现代办公文书写作</a></td>
+						<td class="maroon">2013-11-13</td><tr>
+						<td><a href="###">百家讲坛-解读弟子规（一）</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">易中天品三国之逆流而上</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr>
+						<td><a href="###">沉思录</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr><tr class="odd">
+						<td><a href="###">求医不如求己的163种常识</a></td>
+						<td class="maroon">2013-11-13</td>
+					</tr>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

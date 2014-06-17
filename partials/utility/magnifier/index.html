@@ -1,0 +1,53 @@
+<section class="m-article">
+	<h3>js图片放大镜</h3>
+	<div class="u-line"></div>
+	<h4>Html</h4>
+
+<pre class="prettyprint linenums">&lt;div id="smallPicContainer"
+	   style="border: 1px solid;width: 308px;height: 247px;position: relative;" &gt;
+	    &lt;img src="images/small.jpg" data="images/big.jpg"/&gt;
+	&lt;/div&gt;
+</pre>
+
+	<h4>JavaScript</h4>
+
+<pre class="prettyprint linenums">function magnifier(){
+	        var _this = this,
+	            box = document.createElement("div"),
+	            img = document.createElement("img");
+	        box.style.cssText = "position:absolute;height:300px;width:300px;
+	                                     overflow:hidden;border:1px solid;top:0;left:100%;";
+	        box.style.width = "300px";
+	        box.style.height = "300px";
+	        img.style.cssText = "position:absolute;";
+	        img.src=_this.getAttribute("data");
+	        box.appendChild(img);
+	        _this.parentNode.appendChild(box);
+	        _this.onmouseover = function(){return};
+	        _this.onmousemove = function(){
+	            box.style.display="";
+	            var smallX = event.offsetX,
+	                smallY = event.offsetY,
+	                smallW = _this.parentNode.offsetWidth,
+	                smallH = _this.parentNode.offsetHeight,
+	                bigW = img.offsetWidth,
+	                bigH = img.offsetHeight,
+	                boxW = parseInt(box.style.width),
+	                boxH = parseInt(box.style.height);
+	            var moveL = smallX/smallW * bigW - boxW/2;
+	            var moveT = smallY/smallH * bigH - boxH/2;
+	            img.style.top = -moveT + "px";
+	            img.style.left = - moveL + "px";
+	        }
+	        _this.onmouseout = function(){
+	            box.style.display="none";
+	        }
+	    }</pre>
+
+	<h4>调用</h4>
+
+	<pre class="prettyprint linenums">var smallPic = document.getElementById("smallPicContainer").getElementsByTagName("img")[0];
+	smallPic.onmouseover = magnifier;
+</pre>
+
+</section>

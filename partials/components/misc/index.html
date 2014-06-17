@@ -1,0 +1,104 @@
+<article>
+	 <div class="page-header">
+            <h1>其它<small>轻量级的工具组件</small></h1>
+          </div>
+
+          <h2>Wells</h2>
+          <p>well能给一个页面元素添加简单的嵌入（inset）效果。</p>
+          <div class="bs-docs-example">
+            <div class="well">
+              Look, I'm in a well!
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="well"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+          <h3>可选的类</h3>
+          <p>这两个类用以控制内补和圆角效果。</p>
+          <div class="bs-docs-example">
+            <div class="well well-large">
+              Look, I'm in a well!
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="well well-large"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+          <div class="bs-docs-example">
+            <div class="well well-small">
+              Look, I'm in a well!
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="well well-small"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+          <h2>关闭图标</h2>
+          <p>关闭图标用来关闭模态对话框或警告框。</p>
+          <div class="bs-docs-example">
+            <p><button class="close" style="float: none;">&times;</button></p>
+          </div>
+          <pre class="prettyprint linenums">&lt;button class="close"&gt;&amp;times;&lt;/button&gt;</pre>
+          <p>如果你选择使用连接标签的话，在iOS设备上需要一个<code>href="#"</code>配合点击事件。</p>
+          <pre class="prettyprint linenums">&lt;a class="close" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
+
+          <h2>辅助类</h2>
+          <p>用于小屏幕或调整行为的简单、功能单一的类。</p>
+
+          <h4>.pull-left</h4>
+          <p>让页面元素向左浮动</p>
+<pre class="prettyprint linenums">
+class="pull-left"
+</pre>
+<pre class="prettyprint linenums">
+.pull-left {
+  float: left;
+}
+</pre>
+
+          <h4>.pull-right</h4>
+          <p>让页面元素向右浮动</p>
+<pre class="prettyprint linenums">
+class="pull-right"
+</pre>
+<pre class="prettyprint linenums">
+.pull-right {
+  float: right;
+}
+</pre>
+
+          <h4>.muted</h4>
+          <p>改变页面元素的颜色为<code>#999</code></p>
+<pre class="prettyprint linenums">
+class="muted"
+</pre>
+<pre class="prettyprint linenums">
+.muted {
+  color: #999;
+}
+</pre>
+
+          <h4>.clearfix</h4>
+          <p>为任意页面元素清除<code>浮动</code></p>
+<pre class="prettyprint linenums">
+class="clearfix"
+</pre>
+<pre class="prettyprint linenums">
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+</pre>
+</article>

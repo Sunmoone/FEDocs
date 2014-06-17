@@ -1,0 +1,110 @@
+<article>
+	<div class="page-header">
+            <h1>滚动监听 <small>bootstrap-scrollspy.js</small></h1>
+          </div>
+
+
+          <h2>用在导航条上</h2>
+          <p>ScrollSpy插件根据滚动的位置自动更新导航条中相应的导航项。拖动下面区域的滚动条，使其低于导航条的位置，注意观察active类的变化。下拉菜单中的子项也会跟着变为高亮状态。</p>
+          <div class="bs-docs-example">
+            <div id="navbarExample" class="navbar navbar-static">
+              <div class="navbar-inner">
+                <div class="container" style="width: auto;">
+                  <a class="brand" href="#">Project Name</a>
+                  <ul class="nav">
+                    <li><a href="#fat">@fat</a></li>
+                    <li><a href="#mdo">@mdo</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#one">one</a></li>
+                        <li><a href="#two">two</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#three">three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+              <h4 id="fat">@fat</h4>
+              <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+              <h4 id="mdo">@mdo</h4>
+              <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+              <h4 id="one">one</h4>
+              <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+              <h4 id="two">two</h4>
+              <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+              <h4 id="three">three</h4>
+              <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+              <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+              </p>
+            </div>
+          </div>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>调用方式</h2>
+
+          <h3>通过data属性</h3>
+          <p>只需将<code>data-spy="scroll"</code>添加到被监听的页面元素上（大部分情况是添加到body上），然后将<code>data-target=".navbar"</code>添加到导航部分，仅此而已，顶部导航条就拥有了监听滚动的功能。你可能希望将滚动监听应用到<code>.nav</code>组件上。</p>
+          <pre class="prettyprint linenums">&lt;body data-spy="scroll" data-target=".navbar"&gt;...&lt;/body&gt;</pre>
+
+          <h3>通过JavaScript</h3>
+          <p>通过JavaScript启动滚动监听：</p>
+          <pre class="prettyprint linenums">$('#navbar').scrollspy()</pre>
+
+          <div class="alert alert-info">
+            <strong>注意！</strong>
+            必须为导航条中的链接指定相应的目标id。例如，<code>&lt;a href="#home"&gt;home&lt;/a&gt;</code>必须和dom中类似<code>&lt;div id="home"&gt;&lt;/div&gt;</code>的页面元素相呼应。
+          </div>
+
+          <h3>方法</h3>
+          <h4>.scrollspy('refresh')</h4>
+          <p>当滚动监听所作用的DOM有增删页面元素的操作时，需要调用下面的refresh方法：</p>
+<pre class="prettyprint linenums">
+$('[data-spy="scroll"]').each(function () {
+  var $spy = $(this).scrollspy('refresh')
+});
+</pre>
+
+          <h3>选项</h3>
+          <p>所有参数都可以通过data属性或JavaScript传递。对于data属性，将参数名附着到<code>data-</code>后面，就像<code>data-offset=""</code>一样。</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">名称</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 50px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>offset</td>
+               <td>number</td>
+               <td>10</td>
+               <td>Pixels to offset from top when calculating position of scroll.</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>事件</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">事件</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>activate</td>
+               <td>每当新条目被激活时，此事件被触发。</td>
+            </tr>
+            </tbody>
+          </table>
+</article>

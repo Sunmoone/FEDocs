@@ -1,0 +1,168 @@
+<article>
+	<div class="page-header">
+          <h1>弹出提示 <small>bootstrap-popover.js</small></h1>
+        </div>
+
+        <h2>案例</h2>下面
+        <p>对任意页面元素添加一个覆盖层展示额外信息，就行iPad中的类似功能。将鼠标悬停在下面的按钮上即可触发一个弹出提示。<strong>必须先引入 <a href="#tooltips">工具提示</a> 插件</strong></p>
+
+        <h3>静态弹出提示</h3>
+        <p>有4个可选参数：top、right、bottom和left 对其方式。</p>
+        <div class="bs-docs-example bs-docs-example-popover">
+          <div class="popover top">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover top</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="popover right">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover right</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="popover bottom">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover bottom</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="popover left">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover left</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+        <p>No markup shown as popovers are generated from JavaScript and content within a <code>data</code> attribute.</p>
+
+        <h3>动态演示</h3>
+        <div class="bs-docs-example" style="padding-bottom: 24px;">
+          <a href="#" class="btn btn-large btn-danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">点击查看弹出提示</a>
+        </div>
+
+        <h4>Four directions</h4>
+        <div class="bs-docs-example tooltip-demo">
+          <ul class="bs-docs-tooltip-examples">
+            <li><a href="#" class="btn" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">Popover on top</a></li>
+            <li><a href="#" class="btn" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on right">Popover on right</a></li>
+            <li><a href="#" class="btn" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on bottom">Popover on bottom</a></li>
+            <li><a href="#" class="btn" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on left">Popover on left</a></li>
+          </ul>
+        </div>
+
+
+        <hr class="bs-docs-separator">
+
+
+        <h2>调用方式</h2>
+        <p>通过JavaScript启用弹出提示：</p>
+        <pre class="prettyprint linenums">$('#example').popover(options)</pre>
+
+        <h3>选项</h3>
+        <p>可以通过data属性或JavaScript传递参数。对于data属性，将参数名附着到<code>data-</code>之后，例如<code>data-animation=""</code>。</p>
+        <table class="table table-bordered table-striped">
+          <thead>
+           <tr>
+             <th style="width: 100px;">名称</th>
+             <th style="width: 100px;">类型</th>
+             <th style="width: 50px;">默认值</th>
+             <th>描述</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+             <td>animation</td>
+             <td>boolean</td>
+             <td>true</td>
+             <td>apply a css fade transition to the tooltip</td>
+           </tr>
+           <tr>
+             <td>html</td>
+             <td>boolean</td>
+             <td>false</td>
+             <td>Insert html into the popover. If false, jquery's <code>text</code> method will be used to insert content into the dom. Use text if you're worried about XSS attacks.</td>
+           </tr>
+           <tr>
+             <td>placement</td>
+             <td>string | function</td>
+             <td>'right'</td>
+             <td>how to position the popover - top | bottom | left | right</td>
+           </tr>
+           <tr>
+             <td>selector</td>
+             <td>string</td>
+             <td>false</td>
+             <td>if a selector is provided, tooltip objects will be delegated to the specified targets</td>
+           </tr>
+           <tr>
+             <td>trigger</td>
+             <td>string</td>
+             <td>'click'</td>
+             <td>how popover is triggered - click | hover | focus | manual</td>
+           </tr>
+           <tr>
+             <td>title</td>
+             <td>string | function</td>
+             <td>''</td>
+             <td>default title value if `title` attribute isn't present</td>
+           </tr>
+           <tr>
+             <td>content</td>
+             <td>string | function</td>
+             <td>''</td>
+             <td>default content value if `data-content` attribute isn't present</td>
+           </tr>
+           <tr>
+             <td>delay</td>
+             <td>number | object</td>
+             <td>0</td>
+             <td>
+              <p>delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
+              <p>If a number is supplied, delay is applied to both hide/show</p>
+              <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+             </td>
+           </tr>
+           <tr>
+             <td>container</td>
+             <td>string | false</td>
+             <td>false</td>
+             <td>
+              <p>Appends the popover to a specific element <code>container: 'body'</code></p>
+             </td>
+           </tr>
+          </tbody>
+        </table>
+        <div class="alert alert-info">
+          <strong>Heads up!</strong>
+          Options for individual popovers can alternatively be specified through the use of data attributes.
+        </div>
+
+        <h3>标记</h3>
+        <p>For performance reasons, the Tooltip and Popover data-apis are opt in. If you would like to use them just specify a selector option.</p>
+
+        <h3>方法</h3>
+        <h4>$().popover(options)</h4>
+        <p>对一组页面元素初始化弹出提示。</p>
+        <h4>.popover('show')</h4>
+        <p>打开某个页面元素的弹出提示。</p>
+        <pre class="prettyprint linenums">$('#element').popover('show')</pre>
+        <h4>.popover('hide')</h4>
+        <p>隐藏某个页面元素的弹出提示。</p>
+        <pre class="prettyprint linenums">$('#element').popover('hide')</pre>
+        <h4>.popover('toggle')</h4>
+        <p>打开或隐藏某个页面元素的弹出提示。</p>
+        <pre class="prettyprint linenums">$('#element').popover('toggle')</pre>
+        <h4>.popover('destroy')</h4>
+        <p>隐藏并销毁某个页面元素的弹出提示。</p>
+        <pre class="prettyprint linenums">$('#element').popover('destroy')</pre>
+</article>

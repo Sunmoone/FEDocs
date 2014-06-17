@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>FE-Hub {{pageTitle}}</title>
+	<link rel="stylesheet" href="lib/base/base.css">
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-v2.css">
+	<link rel="stylesheet" href="styles/docs.css">
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular/angular-route.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/directives.js"></script>
+	<script src="scripts/controllers.js"></script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/html5shiv/dist/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body ng-controller="routeControl">
+<div id="wrapper">
+
+	<header class="header header-fixed">
+		<section class="navbar navbar-primary">
+			<div class="navbar-inner">
+				<div class="container">
+					<a href="#/" class="brand navbar-brand">FE-Hub</a>
+					<ul class="nav">
+						<li ng-repeat="item in navPrimary" ng-class="{active:currNavPrmIdx === $index}">
+						<a href="#/{{item.pathID}}/{{item.subset[0].pathID}}" ng-click="tgNavPrm(item, $index)">{{item.disName}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</header>
+	<section class="container main-body">
+		<div class="main-grid row">
+			<div class="grid-left">
+				<div class="side-navigation">
+					<ul class="nav nav-list bs-docs-sidenav affix">
+						<li ng-repeat="item in navSecondary" ng-class="{active:currNavSedIdx === $index}">
+						<a href="#/{{currNavPrm.pathID}}/{{item.pathID}}" ng-click="tgNavSed(item, $index)"><i class="icon-chevron-right"></i>{{item.disName}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="grid-right">
+				<div class="view">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+	</section>		
+	<footer class="footer">
+		<div class="container">
+			<p class="f-tac">Combanc Front-End Developer Hub</p>
+			<div>
+				Reference:
+				<ul>
+					<li>http://dev.w3.org/</li>
+					<li>http://developer.mozilla.org/</li>
+					<li>http://codeguide.bootcss.com/</li>
+					<li>http://v2.bootcss.com/</li>
+					<li>http://nec.netease.com/</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+</div>	
+
+
+
+
+<!-- pretty code -->
+<link rel="stylesheet" href="lib/prettyprint/prettify.css">
+<script src="lib/prettyprint/prettify.js"></script>
+<script src="lib/resizy/resizy.js" ></script>
+</body>
+</html>

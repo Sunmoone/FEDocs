@@ -1,0 +1,932 @@
+<article>
+	<div class="page-header">
+		<h1>表单</h1>
+	</div>
+
+	<h2>默认样式</h2>
+	<p>
+		无需对
+		<code>&lt;form&gt;</code>
+		添加任何类或改变标签结构，每个单独的表单控件都已经被赋予了样式。默认是堆叠、label左侧对齐并在控件之上。
+	</p>
+	<form class="bs-docs-example">
+		<fieldset>
+			<legend>Legend</legend>
+			<label>Label name</label>
+			<input type="text" placeholder="Type something…">
+			<span class="help-block">Example block-level help text here.</span>
+			<label class="checkbox">
+				<input type="checkbox">Check me out</label>
+			<button type="submit" class="btn">Submit</button>
+		</fieldset>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Legend&lt;/legend&gt;
+    &lt;label&gt;Label name&lt;/label&gt;
+    &lt;input type="text" placeholder="Type something…"&gt;
+    &lt;span class="help-block"&gt;Example block-level help text here.&lt;/span&gt;
+    &lt;label class="checkbox"&gt;
+      &lt;input type="checkbox"&gt; Check me out
+    &lt;/label&gt;
+    &lt;button type="submit" class="btn"&gt;Submit&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+
+	<hr class="bs-docs-separator">
+
+	<h2>可选布局</h2>
+	<p>Bootstrap包含3个可选的常用表单布局。</p>
+
+	<h3>搜索表单</h3>
+	<p>
+		为表单增加
+		<code>.form-search</code>
+		类，并为
+		<code>&lt;input&gt;</code>
+		增加
+		<code>.search-query</code>
+		类，可将输入框变成圆角状。
+	</p>
+	<form class="bs-docs-example form-search">
+		<input type="text" class="input-medium search-query">
+		<button type="submit" class="btn">Search</button>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;form class="form-search"&gt;
+  &lt;input type="text" class="input-medium search-query"&gt;
+  &lt;button type="submit" class="btn"&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+	<h3>行内表单</h3>
+	<p>
+		为表单增加
+		<code>.form-inline</code>
+		类， 结果是一个压缩型排列的表单，其中label左侧对齐、控件为inline-block类型。
+	</p>
+	<form class="bs-docs-example form-inline">
+		<input type="text" class="input-small" placeholder="Email">
+		<input type="password" class="input-small" placeholder="Password">
+		<label class="checkbox">
+			<input type="checkbox">Remember me</label>
+		<button type="submit" class="btn">Sign in</button>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;form class="form-inline"&gt;
+  &lt;input type="text" class="input-small" placeholder="Email"&gt;
+  &lt;input type="password" class="input-small" placeholder="Password"&gt;
+  &lt;label class="checkbox"&gt;
+    &lt;input type="checkbox"&gt; Remember me
+  &lt;/label&gt;
+  &lt;button type="submit" class="btn"&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+	<h3>水平表单</h3>
+	<p>右侧对齐并且左侧浮动的label和控件排列在同一行。这需要对默认的表单格式做修改：R</p>
+	<ul>
+		<li>
+			为表单添加
+			<code>.form-horizontal</code>
+			类
+		</li>
+		<li>
+			将label和控件包裹在
+			<code>.control-group</code>
+			中
+		</li>
+		<li>
+			为label添加
+			<code>.control-label</code>
+			类
+		</li>
+		<li>
+			将任何相关的控件包裹在
+			<code>.controls</code>
+			中，以确保最佳的对齐
+		</li>
+	</ul>
+	<form class="bs-docs-example form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">Email</label>
+			<div class="controls">
+				<input type="text" id="inputEmail" placeholder="Email"></div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Password</label>
+			<div class="controls">
+				<input type="password" id="inputPassword" placeholder="Password"></div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<label class="checkbox">
+					<input type="checkbox">Remember me</label>
+				<button type="submit" class="btn">Sign in</button>
+			</div>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;form class="form-horizontal"&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label" for="inputEmail"&gt;Email&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;input type="text" id="inputEmail" placeholder="Email"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label" for="inputPassword"&gt;Password&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;input type="password" id="inputPassword" placeholder="Password"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;div class="controls"&gt;
+      &lt;label class="checkbox"&gt;
+        &lt;input type="checkbox"&gt; Remember me
+      &lt;/label&gt;
+      &lt;button type="submit" class="btn"&gt;Sign in&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+	<hr class="bs-docs-separator">
+
+	<h2>支持的表单控件</h2>
+	<p>在此表单布局案例中包含了所被支持的标准表单控件。</p>
+
+	<h3>输入框（Input）</h3>
+	<p>
+		大部分常用的表单控件、文本输入控件。包括所有HTML5所支持的：text、password、datetime、 datetime-local、date、 month、time、week、number、email、url、search、tel 和 color。
+	</p>
+	<p>
+		任何时候都需要指定
+		<code>type</code>
+		属性。
+	</p>
+	<form class="bs-docs-example form-inline">
+		<input type="text" placeholder="Text input"></form>
+	<pre class="prettyprint linenums">&lt;input type="text" placeholder="Text input"&gt;</pre>
+
+	<h3>文本域（Textarea）</h3>
+	<p>
+		此表单控件支持多行文本。可根据需要修改
+		<code>rows</code>
+		属性。
+	</p>
+	<form class="bs-docs-example form-inline">
+		<textarea rows="3"></textarea>
+	</form>
+	<pre class="prettyprint linenums">&lt;textarea rows="3"&gt;&lt;/textarea&gt;</pre>
+
+	<h3>复选框和单选框</h3>
+	<p>复选框是用于在一个列表中选择一个或多个选项，而单选框是在众多选择中选择一个选项。</p>
+	<h4>默认（堆叠式）</h4>
+	<form class="bs-docs-example">
+		<label class="checkbox">
+			<input type="checkbox" value="">
+			Option one is this and that&mdash;be sure to include why it's great
+		</label>
+		<br>
+		<label class="radio">
+			<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+			Option one is this and that&mdash;be sure to include why it's great
+		</label>
+		<label class="radio">
+			<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			Option two can be something else and selecting it will deselect option one
+		</label>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;label class="checkbox"&gt;
+  &lt;input type="checkbox" value=""&gt;
+  Option one is this and that&mdash;be sure to include why it's great
+&lt;/label&gt;
+
+&lt;label class="radio"&gt;
+  &lt;input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked&gt;
+  Option one is this and that&mdash;be sure to include why it's great
+&lt;/label&gt;
+&lt;label class="radio"&gt;
+  &lt;input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"&gt;
+  Option two can be something else and selecting it will deselect option one
+&lt;/label&gt;
+</pre>
+
+	<h4>行内复选框</h4>
+	<p>
+		为复选框或单选框控件添加
+		<code>.inline</code>
+		类，使他们排列在同一行。
+	</p>
+	<form class="bs-docs-example">
+		<label class="checkbox inline">
+			<input type="checkbox" id="inlineCheckbox1" value="option1">1</label>
+		<label class="checkbox inline">
+			<input type="checkbox" id="inlineCheckbox2" value="option2">2</label>
+		<label class="checkbox inline">
+			<input type="checkbox" id="inlineCheckbox3" value="option3">3</label>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;label class="checkbox inline"&gt;
+  &lt;input type="checkbox" id="inlineCheckbox1" value="option1"&gt; 1
+&lt;/label&gt;
+&lt;label class="checkbox inline"&gt;
+  &lt;input type="checkbox" id="inlineCheckbox2" value="option2"&gt; 2
+&lt;/label&gt;
+&lt;label class="checkbox inline"&gt;
+  &lt;input type="checkbox" id="inlineCheckbox3" value="option3"&gt; 3
+&lt;/label&gt;
+</pre>
+
+	<h3>下拉框</h3>
+	<p>
+		可使用默认的选项或者指定
+		<code>multiple="multiple"</code>
+		属性一次显示多个选项。
+	</p>
+	<form class="bs-docs-example">
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		<br>
+		<select multiple="multiple">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;select&gt;
+  &lt;option&gt;1&lt;/option&gt;
+  &lt;option&gt;2&lt;/option&gt;
+  &lt;option&gt;3&lt;/option&gt;
+  &lt;option&gt;4&lt;/option&gt;
+  &lt;option&gt;5&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select multiple="multiple"&gt;
+  &lt;option&gt;1&lt;/option&gt;
+  &lt;option&gt;2&lt;/option&gt;
+  &lt;option&gt;3&lt;/option&gt;
+  &lt;option&gt;4&lt;/option&gt;
+  &lt;option&gt;5&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+
+	<hr class="bs-docs-separator">
+
+	<h2>扩展表单控件</h2>
+	<p>除了现有的浏览器控件，Bootstrap还额外包含了一些有用的表单组件。</p>
+
+	<h3>前缀和附加输入框</h3>
+	<p>
+		在任何文本输入框之前或之后添加文本或按钮。注意，
+		<code>select</code>
+		控件不支持。
+	</p>
+
+	<h4>默认选项</h4>
+	<p>
+		将
+		<code>.add-on</code>
+		和
+		<code>input</code>
+		进行组合，可以将文本放倒输入框前或后面。
+	</p>
+	<form class="bs-docs-example">
+		<div class="input-prepend">
+			<span class="add-on">@</span>
+			<input class="span2" id="prependedInput" type="text" placeholder="Username"></div>
+		<br>
+		<div class="input-append">
+			<input class="span2" id="appendedInput" type="text">
+			<span class="add-on">.00</span>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-prepend"&gt;
+  &lt;span class="add-on"&gt;@&lt;/span&gt;
+  &lt;input class="span2" id="prependedInput" type="text" placeholder="Username"&gt;
+&lt;/div&gt;
+&lt;div class="input-append"&gt;
+  &lt;input class="span2" id="appendedInput" type="text"&gt;
+  &lt;span class="add-on"&gt;.00&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+	<h4>组合</h4>
+	<p>
+		同时使用两个类，并将两个
+		<code>.add-on</code>
+		放在输入框的前与后。
+	</p>
+	<form class="bs-docs-example form-inline">
+		<div class="input-prepend input-append">
+			<span class="add-on">$</span>
+			<input class="span2" id="appendedPrependedInput" type="text">
+			<span class="add-on">.00</span>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-prepend input-append"&gt;
+  &lt;span class="add-on"&gt;$&lt;/span&gt;
+  &lt;input class="span2" id="appendedPrependedInput" type="text"&gt;
+  &lt;span class="add-on"&gt;.00&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+	<h4>按钮的情况</h4>
+	<p>
+		用
+		<code>.btn</code>
+		代替
+		<code>&lt;span&gt;</code>
+		即可将一个（或两个）按钮添加到输入框前或后。
+	</p>
+	<form class="bs-docs-example">
+		<div class="input-append">
+			<input class="span2" id="appendedInputButton" type="text">
+			<button class="btn" type="button">Go!</button>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-append"&gt;
+  &lt;input class="span2" id="appendedInputButton" type="text"&gt;
+  &lt;button class="btn" type="button"&gt;Go!&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+	<form class="bs-docs-example">
+		<div class="input-append">
+			<input class="span2" id="appendedInputButtons" type="text">
+			<button class="btn" type="button">Search</button>
+			<button class="btn" type="button">Options</button>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-append"&gt;
+  &lt;input class="span2" id="appendedInputButtons" type="text"&gt;
+  &lt;button class="btn" type="button"&gt;Search&lt;/button&gt;
+  &lt;button class="btn" type="button"&gt;Options&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+	<h4>按钮下拉菜单</h4>
+	<p></p>
+	<form class="bs-docs-example">
+		<div class="input-append">
+			<input class="span2" id="appendedDropdownButton" type="text">
+			<div class="btn-group">
+				<button class="btn dropdown-toggle" data-toggle="dropdown">
+					Action
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li>
+						<a href="#">Another action</a>
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /btn-group -->
+		</div>
+		<!-- /input-append -->
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-append"&gt;
+  &lt;input class="span2" id="appendedDropdownButton" type="text"&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+      Action
+      &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<form class="bs-docs-example">
+		<div class="input-prepend">
+			<div class="btn-group">
+				<button class="btn dropdown-toggle" data-toggle="dropdown">
+					Action
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li>
+						<a href="#">Another action</a>
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /btn-group -->
+			<input class="span2" id="prependedDropdownButton" type="text"></div>
+		<!-- /input-prepend -->
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-prepend"&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+      Action
+      &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;input class="span2" id="prependedDropdownButton" type="text"&gt;
+&lt;/div&gt;
+</pre>
+
+	<form class="bs-docs-example">
+		<div class="input-prepend input-append">
+			<div class="btn-group">
+				<button class="btn dropdown-toggle" data-toggle="dropdown">
+					Action
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li>
+						<a href="#">Another action</a>
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /btn-group -->
+			<input class="span2" id="appendedPrependedDropdownButton" type="text">
+			<div class="btn-group">
+				<button class="btn dropdown-toggle" data-toggle="dropdown">
+					Action
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li>
+						<a href="#">Another action</a>
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /btn-group -->
+		</div>
+		<!-- /input-prepend input-append -->
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="input-prepend input-append"&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+      Action
+      &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;input class="span2" id="appendedPrependedDropdownButton" type="text"&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+      Action
+      &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<h4>分段式下拉菜组</h4>
+	<form class="bs-docs-example">
+		<div class="input-prepend">
+			<div class="btn-group">
+				<button class="btn" tabindex="-1">Action</button>
+				<button class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li>
+						<a href="#">Another action</a>
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>
+			<input type="text"></div>
+		<div class="input-append">
+			<input type="text">
+			<div class="btn-group">
+				<button class="btn" tabindex="-1">Action</button>
+				<button class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Action</a>
+					</li>
+					<li>
+						<a href="#">Another action</a>
+					</li>
+					<li>
+						<a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;form&gt;
+  &lt;div class="input-prepend"&gt;
+    &lt;div class="btn-group"&gt;...&lt;/div&gt;
+    &lt;input type="text"&gt;
+  &lt;/div&gt;
+  &lt;div class="input-append"&gt;
+    &lt;input type="text"&gt;
+    &lt;div class="btn-group"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+	<h4>搜索表单</h4>
+	<form class="bs-docs-example form-search">
+		<div class="input-append">
+			<input type="text" class="span2 search-query">
+			<button type="submit" class="btn">Search</button>
+		</div>
+		<div class="input-prepend">
+			<button type="submit" class="btn">Search</button>
+			<input type="text" class="span2 search-query"></div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;form class="form-search"&gt;
+  &lt;div class="input-append"&gt;
+    &lt;input type="text" class="span2 search-query"&gt;
+    &lt;button type="submit" class="btn"&gt;Search&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="input-prepend"&gt;
+    &lt;button type="submit" class="btn"&gt;Search&lt;/button&gt;
+    &lt;input type="text" class="span2 search-query"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+	<h3>控件大小</h3>
+	<p>
+		使用相对大小属性类，例如
+		<code>.input-large</code>
+		或者使用
+		<code>.span*</code>
+		类将输入框调整到网格列的大小。
+	</p>
+
+	<h4>块级输入框</h4>
+	<p>
+		让任何
+		<code>&lt;input&gt;</code>
+		或
+		<code>&lt;textarea&gt;</code>
+		元素表现为一个块级元素。
+	</p>
+	<form class="bs-docs-example" style="padding-bottom: 15px;">
+		<div class="controls">
+			<input class="input-block-level" type="text" placeholder=".input-block-level"></div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;input class="input-block-level" type="text" placeholder=".input-block-level"&gt;
+</pre>
+
+	<h4>相对大小</h4>
+	<form class="bs-docs-example" style="padding-bottom: 15px;">
+		<div class="controls docs-input-sizes">
+			<input class="input-mini" type="text" placeholder=".input-mini">
+			<input class="input-small" type="text" placeholder=".input-small">
+			<input class="input-medium" type="text" placeholder=".input-medium">
+			<input class="input-large" type="text" placeholder=".input-large">
+			<input class="input-xlarge" type="text" placeholder=".input-xlarge">
+			<input class="input-xxlarge" type="text" placeholder=".input-xxlarge"></div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;input class="input-mini" type="text" placeholder=".input-mini"&gt;
+&lt;input class="input-small" type="text" placeholder=".input-small"&gt;
+&lt;input class="input-medium" type="text" placeholder=".input-medium"&gt;
+&lt;input class="input-large" type="text" placeholder=".input-large"&gt;
+&lt;input class="input-xlarge" type="text" placeholder=".input-xlarge"&gt;
+&lt;input class="input-xxlarge" type="text" placeholder=".input-xxlarge"&gt;
+</pre>
+	<p>
+		<span class="label label-info">注意！</span>
+		在未来的版本中，我们将会修改这些类的使用方式，让他们与按钮大小的表示方式一致。例如，
+		<code>.input-large</code>
+		将会使输入框的padding和font-size增大。
+	</p>
+
+	<h4>网格大小</h4>
+	<p>
+		对输入框使用
+		<code>.span1</code>
+		到
+		<code>.span12</code>
+		可以将输入框的大小对齐到网格大小。
+	</p>
+	<form class="bs-docs-example" style="padding-bottom: 15px;">
+		<div class="controls docs-input-sizes">
+			<input class="span1" type="text" placeholder=".span1">
+			<input class="span2" type="text" placeholder=".span2">
+			<input class="span3" type="text" placeholder=".span3">
+			<select class="span1">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			<select class="span2">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			<select class="span3">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;input class="span1" type="text" placeholder=".span1"&gt;
+&lt;input class="span2" type="text" placeholder=".span2"&gt;
+&lt;input class="span3" type="text" placeholder=".span3"&gt;
+&lt;select class="span1"&gt;
+  ...
+&lt;/select&gt;
+&lt;select class="span2"&gt;
+  ...
+&lt;/select&gt;
+&lt;select class="span3"&gt;
+  ...
+&lt;/select&gt;
+</pre>
+
+	<p>
+		对于每行有多个输入框的情况，For multiple grid inputs per line, <strong>使用
+			<code>.controls-row</code>
+			类为输入框增加合适的间距</strong> 
+		。通过浮动让输入框之间缩减一些空白，设置适当的边距，并清除浮动。
+	</p>
+	<form class="bs-docs-example" style="padding-bottom: 15px;">
+		<div class="controls">
+			<input class="span5" type="text" placeholder=".span5"></div>
+		<div class="controls controls-row">
+			<input class="span4" type="text" placeholder=".span4">
+			<input class="span1" type="text" placeholder=".span1"></div>
+		<div class="controls controls-row">
+			<input class="span3" type="text" placeholder=".span3">
+			<input class="span2" type="text" placeholder=".span2"></div>
+		<div class="controls controls-row">
+			<input class="span2" type="text" placeholder=".span2">
+			<input class="span3" type="text" placeholder=".span3"></div>
+		<div class="controls controls-row">
+			<input class="span1" type="text" placeholder=".span1">
+			<input class="span4" type="text" placeholder=".span4"></div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="controls"&gt;
+  &lt;input class="span5" type="text" placeholder=".span5"&gt;
+&lt;/div&gt;
+&lt;div class="controls controls-row"&gt;
+  &lt;input class="span4" type="text" placeholder=".span4"&gt;
+  &lt;input class="span1" type="text" placeholder=".span1"&gt;
+&lt;/div&gt;
+...
+</pre>
+
+	<h3>不可编辑的输入框</h3>
+	<p>对于在表单中呈现不可编辑的数据，无需使用实际的表单控件。</p>
+	<form class="bs-docs-example">
+		<span class="input-xlarge uneditable-input">Some value here</span>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;span class="input-xlarge uneditable-input"&gt;Some value here&lt;/span&gt;
+</pre>
+
+	<h3>表单行为</h3>
+	<p>
+		将一组行为(按钮)放在表单尾部。当他们放置在
+		<code>.form-actions</code>
+		中时，这些按钮将会自动缩进，和其它表单控件对齐。
+	</p>
+	<form class="bs-docs-example">
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Save changes</button>
+			<button type="button" class="btn">Cancel</button>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="form-actions"&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+  &lt;button type="button" class="btn"&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3>帮助文本</h3>
+	<p>表单控件周围可以放置行内或块级元素展示帮助文本。</p>
+	<h4>行内帮助</h4>
+	<form class="bs-docs-example form-inline">
+		<input type="text">
+		<span class="help-inline">Inline help text</span>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;input type="text"&gt;&lt;span class="help-inline"&gt;Inline help text&lt;/span&gt;
+</pre>
+
+	<h4>块级帮助</h4>
+	<form class="bs-docs-example form-inline">
+		<input type="text">
+		<span class="help-block">如果帮助文本过长，可采用块级显示。</span>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;input type="text"&gt;&lt;span class="help-block"&gt;A longer block of help text that breaks onto a new line and may extend beyond one line.&lt;/span&gt;
+</pre>
+
+	<hr class="bs-docs-separator">
+
+	<h2>表单控件状态</h2>
+	<p>改变表单控件和label的反馈状态给用户或者访客提供反馈。</p>
+
+	<h3>输入焦点</h3>
+	<p>
+		我们为一些表单控件移除了默认的
+		<code>outline</code>
+		样式，并且对他们的
+		<code>:focus</code>
+		状态设置了
+		<code>box-shadow</code>
+		样式。
+	</p>
+	<form class="bs-docs-example form-inline">
+		<input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused..."></form>
+	<pre class="prettyprint linenums">
+&lt;input class="input-xlarge" id="focusedInput" type="text" value="This is focused..."&gt;
+</pre>
+
+	<h3>无效输入</h3>
+	<p>
+		为输入框设置
+		<code>:invalid</code>
+		样式从而激发浏览器默认功能。如果输入框是必填的，可以指定一个
+		<code>type</code>
+		和
+		<code>required</code>
+		属性，（如果合适的话）甚至还可以指定
+		<code>pattern</code>
+		属性。
+	</p>
+	<p>由于Internet Explorer 7-9不支持CSS伪类选择器，因此不能在这些浏览器中使用。</p>
+	<form class="bs-docs-example form-inline">
+		<input class="span3" type="email" placeholder="test@example.com" required></form>
+	<pre class="prettyprint linenums">&lt;input class="span3" type="email" required&gt;</pre>
+
+	<h3>被禁用的输入框</h3>
+	<p>
+		给输入框添加
+		<code>disabled</code>
+		属性可阻止用户输入，并且输入框会呈现稍微不同的外观。
+	</p>
+	<form class="bs-docs-example form-inline">
+		<input class="input-xlarge" id="disabledInput" type="text" placeholder="Disabled input here…" disabled></form>
+	<pre class="prettyprint linenums">
+&lt;input class="input-xlarge" id="disabledInput" type="text" placeholder="Disabled input here..." disabled&gt;
+</pre>
+
+	<h3>验证状态</h3>
+	<p>
+		Bootstrap包含了（错误）error、（警告）warning、（通知）info和（成功）success信息的样式。为
+		<code>.control-group</code>
+		添加适当的属性即可使用这些样式。
+	</p>
+
+	<form class="bs-docs-example form-horizontal">
+		<div class="control-group warning">
+			<label class="control-label" for="inputWarning">Input with warning</label>
+			<div class="controls">
+				<input type="text" id="inputWarning">
+				<span class="help-inline">Something may have gone wrong</span>
+			</div>
+		</div>
+		<div class="control-group error">
+			<label class="control-label" for="inputError">Input with error</label>
+			<div class="controls">
+				<input type="text" id="inputError">
+				<span class="help-inline">Please correct the error</span>
+			</div>
+		</div>
+		<div class="control-group info">
+			<label class="control-label" for="inputInfo">Input with info</label>
+			<div class="controls">
+				<input type="text" id="inputInfo">
+				<span class="help-inline">Username is taken</span>
+			</div>
+		</div>
+		<div class="control-group success">
+			<label class="control-label" for="inputSuccess">Input with success</label>
+			<div class="controls">
+				<input type="text" id="inputSuccess">
+				<span class="help-inline">Woohoo!</span>
+			</div>
+		</div>
+	</form>
+	<pre class="prettyprint linenums">
+&lt;div class="control-group warning"&gt;
+  &lt;label class="control-label" for="inputWarning"&gt;Input with warning&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputWarning"&gt;
+    &lt;span class="help-inline"&gt;Something may have gone wrong&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="control-group error"&gt;
+  &lt;label class="control-label" for="inputError"&gt;Input with error&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputError"&gt;
+    &lt;span class="help-inline"&gt;Please correct the error&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="control-group info"&gt;
+  &lt;label class="control-label" for="inputInfo"&gt;Input with info&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputInfo"&gt;
+    &lt;span class="help-inline"&gt;Username is already taken&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="control-group success"&gt;
+  &lt;label class="control-label" for="inputSuccess"&gt;Input with success&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputSuccess"&gt;
+    &lt;span class="help-inline"&gt;Woohoo!&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</article>

@@ -1,0 +1,227 @@
+<section class="m-article">
+	<h3>CSS 技巧</h3>
+	<div class="u-line"></div>
+	<p>浏览器兼容最重要的是要有个可靠的环境，最可怕的不是正确的环境得到错误结果，而是错误的环境得到正确结果。</p>
+	<p>IE Tester很方便，但不总是那么可靠的，比如无法模拟IE6 filter看半透明png。DOM解析也可能有偏差，最好是开虚拟机测试。</p>
+
+<h4>1. inline 元素空白符间隙</h4>
+
+<p><a href="http://jsbin.com/duwiliyo/1/edit" target="_blank"> JS Bin 示例 </a></p>
+
+<pre><code>&lt;span&gt;1&lt;/span&gt;(\n)
+&lt;span&gt;2&lt;/span&gt;(\n)
+&lt;span&gt;3&lt;/span&gt;(\n)
+</code></pre>
+
+<p>span 元素每一行结尾的回车(空格／tab)都会被解释为一个文本节点，占据一定空白，具体大小与继承的font-size有关。<br/>
+<code>display:inline-block</code>的块级元素，也同样会产生这样的bug。</p>
+
+<p>解决办法有两个</p>
+
+<pre><code>span{float:left}
+</code></pre>
+
+<p>或者加一个容器，用将空白文本节点的font-size控制为0</p>
+
+<pre><code>.span-wrap{font-size:0}
+span {font-size:16px}
+</code></pre>
+
+<p>或者说我不太想加样式，那么直接删掉元素与元素间的任何空白符也行</p>
+
+<pre><code>&lt;span&gt;1&lt;/span&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;3&lt;/span&gt;
+</code></pre>
+
+<p>关于行内元素之间的空白，在 一丝的文章<a href="http://ued.taobao.org/blog/2012/08/inline-block/" target="_blank">inline-block的前世今生</a>中有更详尽的介绍。</p>
+
+<h4>2. img 带来上下空白间隙</h4>
+
+<pre><code>&lt;a href="#"&gt;
+  &lt;img src="#" /&gt;
+&lt;/a&gt;
+</code></pre>
+
+<p><a href="http://jsbin.com/lucamisi/2/edit" target="_blank"> JS Bin 示例 </a></p>
+
+<p>一开始我以为这是“inline元素空白符间隙”的一种特例，img作为inline-block,带来水平空白间隙，可以理解。不同的是，img还会带来上下空白间隙。</p>
+
+<p>用这三种方法都可以消除空白</p>
+
+<pre><code>img{float:left}
+</code></pre>
+
+<p>或者<br/>
+    a{font-size:0}<br/>
+或者<br/>
+    img{display:block}</p>
+
+<p>令人费解的是，我试着删除元素之间的空白符，但无论水平空白，或者上下空白依然存在。<br/>
+说明这种空白间隙不是空白符造成。那为什么font-size:0 又能够起作用呢?</p>
+
+<p>我还是没弄明白...</p>
+
+<p>最令人费解的是<br/>
+如果把间隙理解成
+解决方法是设置浮动，</p>
+
+<pre><code>img {float:left}
+or
+img {display:block}  
+</code></pre>
+
+<h4>3. 嵌套float方向不一致，在IE6上换行</h4>
+
+<pre><code>li {float:left}  
+li div {float:right}
+</code></pre>
+
+<p>div会另起一行，解决方式得结合实际情况，设置相同方向的浮动或者定位一下</p>
+
+<h4>4. form 提交用 &lt;input&gt;,避免用&lt;button&gt;</h4>
+
+<p>虽然它们都是可以type="submit"，但有时候button 不能正常提交</p>
+
+<pre><code>&lt;input type="submit"/&gt;  
+&lt;button type="submit"&gt;&lt;/button&gt;
+</code></pre>
+
+<h4>5. IE6 resizing bug 1</h4>
+
+<pre><code>&lt;div style="position: relative"&gt;
+  &lt;div style="width:600px;"&gt;  
+    &lt;div style='position: absolute;'&gt;  
+      This text will disappear if you resize your Internet Explorer window.  
+    &lt;/div&gt;  
+  &lt;/div&gt;  
+&lt;/div&gt;
+</code></pre>
+
+<p>即 position + width + position 会造成内部元素在窗口resizing 时消失
+解决方法，向最外层div添加 <code>zoom:1</code>触发haslayout</p>
+
+<h4>6. IE6 resizing bug 2</h4>
+
+<pre><code>     body {
+          margin: 0 auto;
+          width: 1000px;       // 或者是em值
+     }
+     #displayfixed {
+          position: relative;
+     }
+</code></pre>
+
+<p>body给定宽度，当调整窗口大小时，内部相对定位的元素会保持在原来的位置。即#displayfixed 相对于window,保持一个固定的top,left值，
+但body左右是自动外边距，body相对于window的 left会改变，从而#displayfixed 与body就会发生相对位移，也就是经常看到的“绝对定位”效果。</p>
+
+<p>解决方式有两种，</p>
+
+<pre><code>    body{width:100%}  //设置响应式的宽度值
+</code></pre>
+
+<p>或者是</p>
+
+<pre><code>    body{position:relative}
+</code></pre>
+
+<h4>7. IE6 padding</h4>
+
+<p>在IE6下</p>
+
+<pre><code>div {padding:30px}
+</code></pre>
+
+<p>将得到</p>
+
+<pre><code>div {padding-left:30px;padding-right:30px}
+</code></pre>
+
+<p>并且padding 是不增加div 的尺寸的，正好与之前提到IE6 内部溢出增加元素尺寸相反</p>
+
+<h4>8. margin-top 上溯</h4>
+
+<p>内部元素的margin外边距会上溯，直到遇到padding或border不为零的祖先元素,通过设置父元素border 解决</p>
+
+<pre><code>.wrap {border:1px solid transparent}
+</code></pre>
+
+<p>但还有问题是IE6 不支持transparent ，会多出一条黑边框</p>
+
+<h4>9. IE7- clear:both</h4>
+
+<p>IE7- 只清除相邻的第一个，保险起见还是分开写</p>
+
+<pre><code>.clearboth {clear:left;clear:right}
+</code></pre>
+
+<h4>10. IE6 &lt;select&gt; 元素浮起</h4>
+
+<pre><code>&lt;select&gt; -------- zIndex:0  
+   |  
+ &lt;div&gt;   -------- zIndex:1
+</code></pre>
+
+<p>IE6下,上面示意图中select元素会浮起遮挡住脱离文档流的的div , 构建mask元素iframe去遮挡select,
+这样同为非标准文档流的div与iframe就会遵循zIndex规则，div覆盖iframe，iframe覆盖select,从而div覆盖select。</p>
+
+<pre><code>&lt;select&gt; -------- zIndex:0  
+  |  
+&lt;div&gt;    ------- zIndex:2  
+  |  
+&lt;iframe&gt; -------- zIndex:1  
+</code></pre>
+
+<h4>11. link样式定义顺序</h4>
+
+<p>链接访问过之后，hover样式可能会被覆盖，按照<code>link-visited-hover-active</code> 的顺序在css中定义样式，以保证不会出现hover 被 visited 覆盖的情况</p>
+
+<h4>12. border-collapse 与 border-spacing</h4>
+
+<p>标准浏览器上border-collapse:collapse 会覆盖掉一切border-spacing值，既然坍缩了就不应该再存在cellSpacing，
+但是IE7- 中，cell间的空白却不会被前者覆盖。不过这也不是啥大问题，谁会同时写这两个规则呢</p>
+
+<h4>13. 让IE6 支持min-height</h4>
+
+<p>IE6 不支持min-height, 但是利用IE6上“溢出元素会增大容器尺寸”这一特性，可以实现模拟的min-height</p>
+
+<pre><code>.content{  
+  min-height:300px;  
+  _height: 300px;  
+ _overflow:visible;  
+}
+</code></pre>
+
+<p>利用IE6的cssExpression也可以达到同样目的，页面性能会有些影响，但如果要模拟的是max-height,那还非得祭出cssExpression了</p>
+
+<pre><code>.content{
+    max-height:500px;
+    _height:expression(this.scrollHeight &gt; 500 ? "500px")
+}  
+</code></pre>
+
+<h4>14. IE6 overflow</h4>
+
+<pre><code>    #wrap {
+          border: 1px solid green;
+          width: 300px;
+          height: 20px;
+          overflow:hidden;
+     }
+    #inner{
+          width: 100px;
+          height: 100px;
+          position: relative;
+      }
+</code></pre>
+
+<p>IE6下，#wrap虽然设置了overflow:hidden, 却不能隐藏设置了定位(absolute/relative)的子元素#inner。<br/>
+排列组合了几种情况，发现存在以下规律</p>
+
+<blockquote><ol>
+<li>static 不能遮挡 relative/absolute;</li>
+<li>relative/absolute 可以遮挡 relative/absolute;</li>
+</ol>
+</blockquote>
+
+<p>貌似是在overflow 上也遵循zIndex 高覆盖低的规则。</p>
+
+</section>

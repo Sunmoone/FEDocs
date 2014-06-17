@@ -1,0 +1,72 @@
+<article>
+	<div class="page-header">
+          <h1>警告框 <small>bootstrap-alert.js</small></h1>
+        </div>
+
+
+        <h2>警告框案例</h2>
+        <p>利用此插件对所有警告消息添加取消功能。</p>
+        <div class="bs-docs-example">
+          <div class="alert fade in">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+          </div>
+        </div>
+
+        <div class="bs-docs-example">
+          <div class="alert alert-block alert-error fade in">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4 class="alert-heading">Oh snap! You got an error!</h4>
+            <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            <p>
+              <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
+            </p>
+          </div>
+        </div>
+
+
+        <hr class="bs-docs-separator">
+
+
+        <h2>调用方式</h2>
+        <p>通过JavaScript为某个警告框添加取消功能：</p>
+        <pre class="prettyprint linenums">$(".alert").alert()</pre>
+
+        <h3>标记</h3>
+        <p>仅需将<code>data-dismiss="alert"</code>添加到关闭按钮即可自动赋予某个警告框关闭的功能。</p>
+        <pre class="prettyprint linenums">&lt;a class="close" data-dismiss="alert" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
+
+        <h3>方法</h3>
+        <h4>$().alert()</h4>
+        <p>赋予所有警告框以关闭功能。如果你希望警告框在关闭时带有动画效果，请确保<code>.fade</code> 和<code>.in</code>类已经应用到这些警告框上了。</p>
+        <h4>.alert('close')</h4>
+        <p>关闭某个警告框。</p>
+        <pre class="prettyprint linenums">$(".alert").alert('close')</pre>
+
+
+        <h3>事件</h3>
+        <p>Bootstrap中的警告框对外暴露了一些事件允许你监听。</p>
+        <table class="table table-bordered table-striped">
+          <thead>
+           <tr>
+             <th style="width: 150px;">事件</th>
+             <th>描述</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+             <td>close</td>
+             <td>当<code>close</code>方法被调用时，此事件被立即触发。</td>
+           </tr>
+           <tr>
+             <td>closed</td>
+             <td>当警告框被关闭后（将会等到css过渡效果执行结束），此事件被触发。</td>
+           </tr>
+          </tbody>
+        </table>
+<pre class="prettyprint linenums">
+$('#my-alert').bind('closed', function () {
+  // do something…
+})
+</pre>
+</article>

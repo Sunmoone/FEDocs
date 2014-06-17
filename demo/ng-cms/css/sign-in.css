@@ -1,0 +1,27 @@
+html{width: 100%;height:100%;}
+body{min-width:100%;height:100%;background:url(../images/sign_in_bg.png);background-position: center;font-family: "Microsoft Yahei";}
+input{width: 262px;}
+input:focus{outline: none!important;}
+.signin{width: 405px;background:#fff;position: relative;left: 50%;margin-left: -203px;top: 15%;border-top-left-radius: 4px;border-top-right-radius: 4px;padding-bottom: 5px;}
+.signin_shadow{width: 100%;height: 158px;top: 15%;position:relative;background:url(../images/sign_in_shadow2.png);background-position: center;}
+.signin_title{width: 100%;height: 62px;background:#caeaec;border-top-left-radius: 4px;border-top-right-radius: 4px;}
+.signin_title_logo{width: 44px;height: 45px;position: relative;top: 10px;left:20px;margin-left:10px;background:url(../images/vc_index_logo_mini.png)}
+.signin_title_name{height: 45px;position: relative;top: 25px;left:30px;float:left;font-size: 18px;font-weight: bold;color: #0F6A89;}
+.signin_bar{height: 42px;width: 390px;background: #545454;position: relative;left: -24px;top: 10px}
+.signin_bar_inner{position: relative;top:10px;left: 50px;font-size: 20px;color: #fff;font-weight: bold; }
+.signin_bar_triangle{width: 24px;height: 16px;position: absolute;background: url(../images/triangle.png);
+	top: 42px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif}
+.signin_form{margin-top: 25px;margin-left: -90px;}
+.v_code{width: 80px;float: left;}
+.v_code_generator{width: 80px;height: 30px;background: #999;float: left;border-radius: 4px;margin-left: 20px; }
+.v_code_a{font-size: 12px;position: relative;top: 10px;left: 30px;}
+.btn{padding: 4px 40px;}
+.btn-primary:hover{background:#c8eaeb;}
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] 
+ {background-color: #90dce3;background-image: linear-gradient(to bottom,#c8eaeb,#90dce3);background-repeat: repeat-x;border-color: #ccc;border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);}
+.error-text{color:rgb(238,121,121)}

@@ -1,0 +1,98 @@
+<article>
+	<div class="page-header">
+              <h1>按钮 <small>bootstrap-button.js</small></h1>
+            </div>
+
+            <h2>使用案例</h2>
+            <p>按钮可以实现很多功能。为工具条（toolbar）之类的组件赋予控制按钮的状态或者创建一组按钮的功能。</p>
+
+            <h4>状态</h4>
+            <p>添加<code>data-loading-text="正在加载"</code>可以为按钮设置正在加载状态。</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <button type="button" id="fat-btn" data-loading-text="正在加载" class="btn btn-primary">
+                加载状态
+              </button>
+            </div>
+            <pre class="prettyprint linenums">&lt;button type="button" class="btn btn-primary" data-loading-text="Loading..."&gt;Loading state&lt;/button&gt;</pre>
+
+            <h4>选中</h4>
+            <p>添加<code>data-toggle="button"</code>可以激活单个按钮的选中状态。</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <button type="button" class="btn btn-primary" data-toggle="button">Single Toggle</button>
+            </div>
+            <pre class="prettyprint linenums">&lt;button type="button" class="btn btn-primary" data-toggle="button"&gt;Single Toggle&lt;/button&gt;</pre>
+
+            <h4>复选</h4>
+            <p>添加<code>data-toggle="buttons-checkbox"</code>可以为按钮组添加复选框样式的勾选风格。</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <div class="btn-group" data-toggle="buttons-checkbox">
+                <button type="button" class="btn btn-primary">Left</button>
+                <button type="button" class="btn btn-primary">Middle</button>
+                <button type="button" class="btn btn-primary">Right</button>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div class="btn-group" data-toggle="buttons-checkbox"&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Left&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Middle&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+            <h4>单选</h4>
+            <p>添加<code>data-toggle="buttons-radio"</code>为按钮组添加单选框样式的选中风格。</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" class="btn btn-primary">左</button>
+                <button type="button" class="btn btn-primary">中</button>
+                <button type="button" class="btn btn-primary">右</button>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div class="btn-group" data-toggle="buttons-radio"&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Left&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Middle&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>调用方式</h2>
+            <p>通过JavaScript激活按钮：</p>
+            <pre class="prettyprint linenums">$('.nav-tabs').button()</pre>
+
+            <h3>标记</h3>
+            <p>按钮插件的Data属性是完整的。通过下面的案例可以看到各种类型的标记。</p>
+
+            <h3>选项</h3>
+            <p><em>无</em></p>
+
+            <h3>方法</h3>
+            <h4>$().button('toggle')</h4>
+            <p>Toggles push state. Gives the button the appearance that it has been activated.</p>
+            <div class="alert alert-info">
+              <strong>Heads up!</strong>
+              You can enable auto toggling of a button by using the <code>data-toggle</code> attribute.
+            </div>
+            <pre class="prettyprint linenums">&lt;button type="button" class="btn" data-toggle="button" &gt;…&lt;/button&gt;</pre>
+            <h4>$().button('loading')</h4>
+            <p>Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.
+            </p>
+            <pre class="prettyprint linenums">&lt;button type="button" class="btn" data-loading-text="loading stuff..." &gt;...&lt;/button&gt;</pre>
+            <div class="alert alert-info">
+              <strong>Heads up!</strong>
+              <a href="https://github.com/twitter/bootstrap/issues/793">Firefox persists the disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.
+            </div>
+            <h4>$().button('reset')</h4>
+            <p>Resets button state - swaps text to original text.</p>
+            <h4>$().button(string)</h4>
+            <p>Resets button state - swaps text to any data defined text state.</p>
+<pre class="prettyprint linenums">&lt;button type="button" class="btn" data-complete-text="finished!" &gt;...&lt;/button&gt;
+&lt;script&gt;
+  $('.btn').button('complete')
+&lt;/script&gt;
+</pre>
+</article>

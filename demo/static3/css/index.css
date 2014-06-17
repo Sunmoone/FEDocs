@@ -1,0 +1,64 @@
+html,body{font-size: 12px;font-family: Microsoft Yahei;background: #eee;height: 100%;color: #333333;margin: 0;padding: 0}
+ul{list-style-type: none;}
+a{text-decoration: none;color: #555}
+a:hover{text-decoration: underline;}
+.pageContainer{width: 1000px;margin: 0 auto;position: relative;background: #fff;min-height: 100%;height: 100%;height: auto!important;overflow: visible;}
+#top{background: #ffffff;height: 305px;width: 1000px}
+#main{padding: 0px 0px 140px 0px;*padding-bottom: 0px;margin: 0 auto;}
+#footer{background: #336380;height: 100px;position: absolute;bottom: 4px;width: 1000px;*position: static;*margin-top: 30px;}
+#footerCont{background: #ABABAB;height: 100px}
+#footer p, #footerCont p{text-align: center;color: #ffffff;line-height: 30px;}
+.topBanner{width: 652px;height: 99px;background: url(../images/logo.png);background-position: center;}
+.topBanner h3{float: right;margin-right: 40px;margin-top: 55px;color: #023D58;font-size: 28px;font-family: kaiti_GB2313;*display: inline;}
+.banner{margin-top: 0px;}
+.banner img{width: 1000px;}
+.nav{width: 100%;height: 29px;background: url(../images/nav_bg1.jpg);}
+.nav ul{width: 600px;margin: 0 auto;}
+.nav ul li{float: left;}
+.nav ul li:hover{background: url(../images/nav_hover.jpg);}
+.nav ul li a{display: block;height: 29px;float: left;line-height: 27px;padding: 0 20px;color: #fff;font-size: 14px}
+.nav ul li a:hover{text-decoration: none;color: #FFFFFF}
+.span8{width: 310px;float: left;margin-right: 10px;*display: inline;margin-top: 10px;clear: left;}
+.span10{width: 390px;float: left;margin-right: 10px;*display: inline;margin-top: 10px}
+.span9plus{width: 375px;float: left;margin-right: 10px;*display: inline;margin-top: 10px}
+.span6{width: 230px;float: left;*display: inline;margin-top: 10px} 
+.span18{width: 710px;float: left;margin-right: 10px;*display: inline;margin-top: 10px;margin-left: 25px} 
+/**********24栏960布局 gap=2*10***************/
+.titleBar{background: #FFFFFF;height: 26px;padding-top: 5px;border: 1px solid #90C1DD;border-top-left-radius: 5px;border-top-right-radius: 5px;border-bottom: none}
+.titleBar h3{display: inline;font-weight: 400;color: #063F5A;float: left;font-size: 14px;height: 26px;padding: 0 10px 0 30px;background: url(../images/circleIcon.png);background-repeat: no-repeat;background-position: 10px 3px;}
+.titleBar a.more{float: right;position: relative;top: 5px;right: 10px}
+.columnList a.more{position: absolute;bottom: 5px;right: 10px;*bottom: 50px}
+.span6 .columnList, .span8 .columnList{position: relative;}
+.notice .titleBar {background: #86BBDA}
+.notice .titleBar h3{background: url(../images/notice.png);background-repeat: no-repeat;background-position: 10px 0px;padding-left: 45px}
+.columnList{padding: 10px}
+.columnList ul li {height: 22px;padding-top: 5px;padding-left: 10px;background: url(../images/arrowBlue.png);background-position: left center;background-repeat: no-repeat; }
+.laws .columnList ul li {list-style-type: disc;background: none;margin-left: 20px;padding-left: 0; }
+.columnList ul li a{float: left;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;}
+.columnList ul li a span{float: right;}
+.columnList, .columnArticle{border: 1px solid #90C1DD;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;border-top: none}
+.span10 .titleBar, .span18 .titleBar, .detailPage .titleBar{height: 24px;border-bottom: 2px solid #86BBDA}
+.titleBar{height: 25px;border-bottom: 1px solid #86BBDA;background: #86BBDA}
+.span8 .columnList ul li a{max-width: 240px;*width: 240px;}
+.span10 .columnList ul li a{max-width: 300px;*width: 300px;}
+.span6 .columnList ul li a{max-width: 160px;*width: 160px;}
+.span18 .columnList ul li a{max-width: 600px;*width: 600px;}
+.span8 .columnList, .span6 .columnList{background: #F3FBFE}
+.columnList{overflow: hidden;}
+.columnList ul li span{float: right}
+.columnList.links{border: 1px solid #86BBDA;border-top:none;padding: 8px 10px 7px 10px}
+.columnArticle{padding: 10px;}
+.columnArticle h3{text-align: center;margin-top: 10px;margin-bottom: 10px}
+.columnArticle p{text-indent: 2em;line-height: 24px}
+i.newIcon{display: block; width: 21px;height: 16px;background: url(../images/newIcon.png);float: left;*display: inline;position: relative;top: 1px;margin-left: 6px;background-repeat: no-repeat;}
+.sendMail.columnList{padding-top: 0px;padding-bottom: 2px;background: url(../images/holder1.png) #F3FBFE;background-position: 20px center;background-repeat: no-repeat;}
+.sendMail a{display: block;width: 100px;height: 27px;background: url(../images/mailHolder.png);margin-left: 100px;text-align: center;line-height: 27px;margin-top: 5px;color:#2842FF;}
+.links a{color:#1761b3}
+.detailPage #main{margin-top: 10px}
+ul.subnav{position: absolute;width: 96px;background: #555;top: 300px;z-index: 1000;display: none;*margin-left: -100px;}
+.laws .columnList ul{*margin-top: -10px;}
+.laws .columnList ul li a{*position: relative;*top: 10px;}
+.span6 .columnList ul li {height: 17px;}
+.contact .titleBar{border-radius: 5px}
+.contact .titleBar a{color:blue;}
+.laws .colu

@@ -1,0 +1,47 @@
+<article>
+	<div class="page-header">
+              <h1>附加导航（Affix） <small>bootstrap-affix.js</small></h1>
+            </div>
+
+            <h2>案例</h2>
+            <p>本页面左侧就是一个附加导航的实际案例。</p>
+
+            <hr class="bs-docs-separator">
+
+            <h2>调用方式</h2>
+
+            <h3>通过data属性</h3>
+            <p>只需添加<code>data-spy="affix"</code>到任意需要监听的页面元素上，就可以很容易的将其变为附加导航。然后使用偏移量来控制其位置。</p>
+
+            <pre class="prettyprint linenums">&lt;div data-spy="affix" data-offset-top="200"&gt;...&lt;/div&gt;</pre>
+
+            <div class="alert alert-info">
+              <strong>注意！</strong>
+              你必须管理一个固定元素的位置和它的父级的行为。通过<code>affix</code>、<code>affix-top</code>和<code>affix-bottom</code>进行位置控制。因为它的正常流程是通过页面的内页移动来确定的，所以使用该插件时，要检查一下父级是否是切换模式。
+            </div>
+
+            <h3>通过JavaScript</h3>
+            <p>通过JavaScript启动：</p>
+            <pre class="prettyprint linenums">$('#navbar').affix()</pre>
+
+          <h3>选项</h3>
+          <p>选项的传递可通过数据属性或JavaScript. 对于数据属性, 需要附加选项名称 <code>data-</code>，例如<code>data-offset-top="200"</code>。</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">名称</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 50px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>offset</td>
+               <td>number | function | object</td>
+               <td>10</td>
+               <td>计算从顶部到滚动的位置的偏移(像素). 如果设置了一个数字, 该偏移量的值将被应用在顶部和左方向. 如果要设置一个方向或者多个方向的偏移量, 只需提供一个对象<code>offset: { x: 10 }</code>。该函数可以让你动态的提供一个偏移量(对于一些响应式设计很有用)。</td>
+             </tr>
+            </tbody>
+          </table>
+</article>

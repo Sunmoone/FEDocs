@@ -1,0 +1,27 @@
+<section class="m-article">
+	<h3>Cookie 优化</h3>
+	<div class="u-line"></div>
+	<ol>
+		<li>减小Cookie体积</li>
+		<li>对于页面内容使用无coockie域名</li>
+	</ol>
+	<dl>
+		<dt>减小Cookie体积</dt>
+		<dd>
+			<p>HTTP Cookie可以用于权限验证和个性化身份等多种用途。coockie内的有关信息是通过HTTP文件头来在web服务器和浏览器之间进行交流的。因此 保持coockie尽可能的小以减少用户的响应时间十分重要。有关更多信息可以查看Tenni Theurer和Patty Chi的文章“When the Cookie Crumbles”。</p>
+			<p>研究中主要包括:</p>
+			<ul>
+				<li>去除不必要的 coockie</li>
+				<li>使 coockie 体积尽量小以减少对用户响应的影响</li>
+				<li>注意在适应级别的域名上设置 coockie 以便使子域名不受影响</li>
+				<li>设置合理的过期时间。较早地 Expire 时间和不要过早去清除 coockie,都会改善用户的响应时间。</li>
+			</ul>
+		</dd>
+		<dt>对于页面内容使用无coockie域名</dt>
+		<dd>
+			<p>当浏览器在请求中同时请求一张静态的图片和发送coockie时,服务器对于这些coockie不会做任何地使用。因此他们只是因为某些负面因素而创建的网络传输。所有你应该确定对于静态内容的请求是无coockie的请求。创建一个子域名并用他来存放所有静态内容。</p>
+			<p>如 果你的域名是www.example.org,你可以在static.example.org上存在静态内容。但是,如果你不是在 www.example.org上而是在顶级域名example.org设置了coockie,那么所有对于static.example.org的请求 都包含coockie。在这种情况下,你可以再重新购买一个新的域名来存在静态内容,并且要保持这个域名是无coockie的。Yahoo!使用的是 ymig.com,YouTube使用的是ytimg.com,Amazon使用的是images-anazon.com等等。</p>
+			<p>使用无 coockie域名存在静态内容的另外一个好处就是一些代理(服务器)可能会拒绝对coockie的内容请求进行缓存。一个相关的建议就是, 如果你想确定应该使用example.org还是www.example.org作为你的一主页,你要考虑到coockie带来的影响。忽略掉www会使 你除了把coockie设置到*.example.org(*是泛域名解析,代表了所有子域名译者dudo注)外没有其它选择,因此出于性能方面的考虑最 好是使用带有www的子域名并且在它上面设置coockie。</p>
+		</dd>
+	</dl>
+</section>

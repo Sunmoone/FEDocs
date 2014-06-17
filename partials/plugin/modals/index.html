@@ -1,0 +1,204 @@
+<article>
+	<div class="page-header">
+            <h1>模态对话框 <small>bootstrap-modal.js</small></h1>
+          </div>
+
+
+          <h2>案例</h2>
+          <p>模态对话框是一类简洁、灵活的的弹框，他们具有精简的功能和友好的默认行为。</p>
+
+          <h3>静态案例</h3>
+          <p>带有标题、正文、页脚按钮的对话框。</p>
+          <div class="bs-docs-example" style="background-color: #f5f5f5;">
+            <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>对话框标题</h3>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn">关闭</a>
+                <a href="#" class="btn btn-primary">Save changes</a>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="modal hide fade"&gt;
+  &lt;div class="modal-header"&gt;
+    &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
+    &lt;h3&gt;对话框标题&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body"&gt;
+    &lt;p&gt;One fine body&hellip;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;a href="#" class="btn"&gt;关闭&lt;/a&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Save changes&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>动态演示</h3>
+          <p>点击下面的按钮会通过javascript触发一个模态对话框。对话框从页面顶端滑下的同时逐渐呈现。</p>
+          <!-- sample modal content -->
+          <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">模态对话框头部</h3>
+            </div>
+            <div class="modal-body">
+              <h4>模态对话框中的文本</h4>
+              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+
+              <h4>Popover in a modal</h4>
+              <p>This <a href="#" role="button" class="btn popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
+
+              <h4>Tooltips in a modal</h4>
+              <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+              <hr>
+
+              <h4>Overflowing text to show optional scrollbar</h4>
+              <p>We set a fixed <code>max-height</code> on the <code>.modal-body</code>. Watch it overflow with all this extra lorem ipsum text we've included.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">关闭</button>
+              <button class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">查看演示案例</a>
+          </div>
+<pre class="prettyprint linenums">
+&lt!-- Button to trigger modal --&gt;
+&lt;a href="#myModal" role="button" class="btn" data-toggle="modal"&gt;查看演示案例&lt;/a&gt;
+
+&lt!-- Modal --&gt;
+&lt;div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-header"&gt;
+    &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+    &lt;h3 id="myModalLabel"&gt;Modal header&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body"&gt;
+    &lt;p&gt;One fine body&hellip;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;button class="btn" data-dismiss="modal" aria-hidden="true"&gt;关闭&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>调用方式</h2>
+
+          <h3>通过data属性</h3>
+          <p>无需编写JavaScript代码即可生成一个对话框。在一个主控元素，例如按钮，上设置<code>data-toggle="modal"</code>，然后再设置<code>data-target="#foo"</code> 或<code>href="#foo"</code> 用以指向某个将要被启动的对话框。</p>
+          <pre class="prettyprint linenums">&lt;button type="button" data-toggle="modal" data-target="#myModal"&gt;Launch modal&lt;/button&gt;</pre>
+
+          <h3>通过JavaScript</h3>
+          <p>仅用一行JavaScript代码即可启动id为<code>myModal</code>的对话框：</p>
+          <pre class="prettyprint linenums">$('#myModal').modal(options)</pre>
+
+          <h3>选项</h3>
+          <p>上面的选项都可以通过data属性或JavaScript代码传递给组件。对于data属性，将选项名称附着于<code>data-</code>字符串之后，就像<code>data-backdrop=""</code>一样。</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">名称</th>
+               <th style="width: 50px;">类型</th>
+               <th style="width: 50px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>backdrop</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>为模态对话框添加一个背景元素。另外，为背景指定<code>static</code>时，点击模态对话框的外部区域不会将其关闭。</td>
+             </tr>
+             <tr>
+               <td>keyboard</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>按下esc键时关闭模态对话框</td>
+             </tr>
+             <tr>
+               <td>show</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>初始化时即显示模态对话框</td>
+             </tr>
+             <tr>
+               <td>remote</td>
+               <td>path</td>
+               <td>false</td>
+               <td><p>如果提供了远程url地址，就会通过 jQuery的<code>load</code>方法加载内容并注入到<code>.modal-body</code>中。如果你使用的是data属性api，你还可以使用<code>href</code>标签指定远程数据源。案例如下：</p>
+              <pre class="prettyprint linenums"><code>&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;click me&lt;/a&gt;</code></pre></td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>方法</h3>
+          <h4>.modal(options)</h4>
+          <p>让你指定的内容变成一个模态对话框。接受一个可选的参数<code>object</code>.</p>
+<pre class="prettyprint linenums">
+$('#myModal').modal({
+  keyboard: false
+})
+</pre>
+          <h4>.modal('toggle')</h4>
+          <p>手动打开或隐藏一个模态对话框。</p>
+          <pre class="prettyprint linenums">$('#myModal').modal('toggle')</pre>
+          <h4>.modal('show')</h4>
+          <p>手动打开一个模态对话框。</p>
+          <pre class="prettyprint linenums">$('#myModal').modal('show')</pre>
+          <h4>.modal('hide')</h4>
+          <p>手动隐藏一个模态对话框。</p>
+          <pre class="prettyprint linenums">$('#myModal').modal('hide')</pre>
+          <h3>事件</h3>
+          <p>Bootstrap中的模态对话框对外暴露了一些事件允许你监听。</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">事件</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>show</td>
+               <td>当<code>show</code>方法被调用时，此事件将被立即触发。</td>
+             </tr>
+             <tr>
+               <td>shown</td>
+               <td>当模态对话框呈现到用户面前时（会等待过渡效果执行结束）此事件被触发。</td>
+             </tr>
+             <tr>
+               <td>hide</td>
+               <td>当<code>hide</code>方法被调用时，此事件被立即触发。</td>
+             </tr>
+             <tr>
+               <td>hidden</td>
+               <td>当模态对话框被隐藏（而且过渡效果执行完毕）之后，此事件将被触发。</td>
+             </tr>
+            </tbody>
+          </table>
+<pre class="prettyprint linenums">
+$('#myModal').on('hidden', function () {
+  // do something…
+})
+</pre>
+</article>

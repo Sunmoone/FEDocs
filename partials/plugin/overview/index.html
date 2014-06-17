@@ -1,0 +1,45 @@
+<article>
+	<div class="page-header">
+            <h1>Bootstrap中的JavaScript</h1>
+          </div>
+
+          <h3>引入单个插件还是一次性引入所有插件</h3>
+          <p>每个插件都可以单独的引入到页面中（注意插件间的依赖关系），或者一次性引入。<strong>bootstrap.js</strong> 和<strong>bootstrap.min.js</strong> 文件都将所有插件包含在一个文件中了（前者是未压缩版，后者是压缩版）。</p>
+
+          <h3>Data 属性</h3>
+          <p>你可以仅仅通过data属性API就能使用所有Bootstrap中的插件，而且不用写一行JavaScript代码。这是Bootstrap中的一等API，并且是你的首选方式。</p>
+
+          <p>特殊情况是，在某些情况下可能需要特意禁用这种默认动作。因此，我们特地提供了禁用data属性API的方式，通过解除绑定在body上的被命名为`'data-api'`的事件即可实现。如下所示：
+          <pre class="prettyprint linenums">$('body').off('.data-api')</pre>
+
+          <p>还可以解除特定插件的事件绑定，只要将插件名和data-api链接在一起作为参数使用。如下所示：</p>
+          <pre class="prettyprint linenums">$('body').off('.alert.data-api')</pre>
+
+          <h3>编程API</h3>
+          <p>我们同时为所有Bootstrap插件提供了JavaScript API。所有公开的API都可以单独或链式调用，均返回其所操作的集合（和jQuery的API一致）。</p>
+          <pre class="prettyprint linenums">$(".btn.danger").button("toggle").addClass("fat")</pre>
+          <p>所有方法均可接受一个可选的参数对象、一个对此方法有特定意义的字符串或者什么也不传（即用默认参数初始化此插件）：</p>
+<pre class="prettyprint linenums">
+$("#myModal").modal()                       // initialized with defaults
+$("#myModal").modal({ keyboard: false })   // initialized with no keyboard
+$("#myModal").modal('show')                // initializes and invokes show immediately</p>
+</pre>
+          <p>每个插件都通过`Constructor` 属性暴露了其原始的构造函数：<code>$.fn.popover.Constructor</code>。如果你想获得某个特定插件的实例，可以直接从页面元素中获取：<code>$('[rel=popover]').data('popover')</code>.</p>
+
+          <h3>避免冲突</h3>
+          <p>如果你需要将Bootstrap插件和其它UI框架一同使用。在这种情况下，随时都会导致命名空间冲突。如果这种情况发生了，你可以通过调用插件的 <code>.noConflict</code> 函数恢复其原始值。</p>
+
+<pre class="prettyprint linenums">
+var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the bootstrap functionality
+</pre>
+
+          <h3>事件</h3>
+          <p>Bootstrap对多数插件的独有行为提供了自定义事件。 一般而言，这些事件都是以（英语）动词的原型和过去分词形式来表示的 - 动词原形形式的(例如： <code>show</code>) 在事件执行之前触发；过去分词形式的(例如：<code>shown</code>) 在动作执行完毕后触发。</p>
+          <p>所有动词原形形式的事件都提供了preventDefault函数。这能在动作执行之前使其停止。</p>
+<pre class="prettyprint linenums">
+$('#myModal').on('show', function (e) {
+    if (!data) return e.preventDefault() // stops modal from being shown
+})
+</pre>	
+</article>

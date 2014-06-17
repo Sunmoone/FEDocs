@@ -1,0 +1,8 @@
+.list_cont{width:100%; height:auto!important;height:510px;overflow:visible;padding-bottom:10px;}
+.content{margin-top: 30px}
+.cont_title{line-height:30px;padding:10px 0 0 10px;margin-bottom:10px; color:#999999; width:100%; border-bottom:solid #ad9595 1px;}
+.cont_title a:link,.cont_title a:visited{ color:#999999}
+.cont_title a:hover{ color:#ff0000}
+.cont_table{border-collapse:collapse;table-layout:fixed;border:1px solid #ad9595;}
+.cont_table tbody th{background:none;text-align:center;border:solid #ad9595 1px;height: 55px}
+.cont_table tbody td{border:solid #ad9595 1px;text-align:left;padding:5px}

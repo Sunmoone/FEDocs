@@ -1,0 +1,54 @@
+html,body{font-size: 12px;font-family: Microsoft Yahei;background: #F6F6F6;height: 100%;color: #323232;margin: 0;padding: 0}
+ul{list-style-type: none;}
+a{text-decoration: none;color: #555}
+a:hover{text-decoration: underline;}
+.pageContainer{width: 970px;margin: 0 auto;position: relative;background: #ABD690;height: auto!important;overflow: visible;}
+#top{background: #ffffff;height: 133px}
+#main{padding: 0 10px 10px 10px;}
+.listPage #main{padding: 0;border:10px solid #ABD690;background: #E7F1D9;*padding-bottom: 0px}
+#footer{height: 100px;width: 970px;margin-top: 30px;background: #44952F}
+#footerCont{height: 100px}
+#footer p, #footerCont p{text-align: center;color: #FFF;line-height: 30px;}
+.topBanner{width: 970px;height: 133px;background: url(../images/topbg.png);}
+.topBanner h3{float: right;margin-right: 40px;margin-top: 55px;color: #FFF;font-size: 28px;font-family: kaiti_GB2313;*display: inline;}
+.nav{width: 100%;height: 25px;margin-top: -27px}
+.nav ul li{float: left;margin-left: 7px;position: relative;}
+.nav ul li a{display: block;height: 25px;line-height: 25px;width: 100px;color: #2B6922;font-size: 14px;text-align: center;}
+.nav ul li a:hover{background: url(../images/navHover.png);text-decoration: none;color: #FFFFFF}
+ul.subNav{position: absolute;width: 100px;background: #204E68;top: 25px;z-index: 1000;display: none;background: #B9DA98}
+ul.subNav li{margin-left: 0px;}
+ul.subNav li a:hover{background: none}
+.span8{width: 310px;float: left;*display: inline;margin-top: 10px}
+.span10{width: 390px;float: left;margin-right: 10px;*display: inline;margin-top: 10px}
+.span4{width: 150px;float: left;*display: inline} 
+.span6{width: 230px;float: left;*display: inline;margin-top: 10px} 
+.span16{width: 628px;float: left;margin-right: 10px;*display: inline;margin-top: 10px;border: 1px solid #8CB188;border-radius: 4px;}
+.span18{width: 710px;float: left;*display: inline;margin-top: 10px;background: #fff} 
+.span20{width: 790px;float: left;*display: inline;border-left: 10px solid #ABD690;background: #fff} 
+/**********24栏960布局 gap=2*10***************/
+.titleBar{background: url(../images/titleBar.png);height: 25px;}
+.titleBar h3{display: inline;font-weight: bold;color: #4B8433;float: left;font-size: 14px;height: 25px;line-height: 25px;padding: 0 20px 0 20px}
+.titleBar a.more{float: right;position: relative;top: 5px;right: 10px;color: #FFFFFF}
+.columnList, .columnArticle{border: 1px solid #E3E3E3;padding: 10px}
+.columnList ul li {height: 22px;padding-top: 5px;padding-left: 10px;background: url(../images/arrowGreen.png);background-position: left center;background-repeat: no-repeat; }
+.columnList ul li a{float: left;}
+.columnList ul li span{float: right}
+.picNews{padding: 5px}
+.picNews img{width: 100%}
+.paneB{background: url(../images/paneB.png);background-repeat: no-repeat;padding: 5px;}
+.paneA{background: url(../images/paneA.png);background-repeat: no-repeat;padding: 5px;}
+.paneA ul li, .paneB ul li{height: 19px;padding-top: 4px;margin-left: 10px;*padding-top: 0}
+.paneA.columnList{height: 160px;border: 0;}
+.paneB.columnList{height: 122px;border: 0}
+
+.leftNav{background: #E7F1D9;}
+.leftNav h3{margin: 0 auto;margin-top: 30px;text-align: center;font-weight: bold;color: #555;font-size: 16px;background: ;height: 30px;line-height: 30px}
+.leftNav ul{margin-left: 44px;margin-top: 10px}
+.leftNav ul li{height: 22px;padding-top: 5px;padding-left: 20px;background: url(../images/arrowGreen2.png);background-position: left center;background-repeat: no-repeat; }
+.ArticletitleBar{background: url(../images/homeIcon.png);background-repeat: no-repeat;background-position: 10px 3px;padding-left: 15px}
+.columnArticle{padding: 10px;border: 0;background: #fff}
+.columnArticle h3{text-align: center;margin-top: 10px;margin-bottom: 10px}
+.columnArticle p{text-indent: 2em;line-height: 24px}
+.ArticlePic{width: 720px;height: 428px;background: #ace;margin: 0 auto}
+.slideShow{width: 100%;height: 500px;background: #ace;margin-top: 20px}
+

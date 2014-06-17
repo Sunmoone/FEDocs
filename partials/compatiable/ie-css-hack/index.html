@@ -1,0 +1,49 @@
+<section class="m-article">
+	<h3>为IE 编写代码</h3>
+	<div class="u-line"></div>
+	   <h3>1. IE条件注释</h3>
+
+<p><strong>所有版本</strong></p>
+
+<pre><code> &lt;!--[IF IE]&gt;
+     &lt;link type=”text/css” href=”ie.css” rel=”stylesheet” /&gt;
+ &lt;![ENDIF]–&gt;
+</code></pre>
+
+<p><strong>指定版本</strong></p>
+
+<pre><code>&lt;!--[IF IE 6]&gt;
+     &lt;link type=”text/css” href=”ie6.css” rel=”stylesheet” /&gt;
+ &lt;![ENDIF]--&gt;
+</code></pre>
+
+<p><strong>指定区间</strong></p>
+
+<pre><code>&lt;!--[IF lt IE 8]&gt;
+     &lt;link type=”text/css” href=”ie8-.css” rel=”stylesheet” /&gt;
+ &lt;![ENDIF]--&gt;
+</code></pre>
+
+<h3>2. 样式属性前缀法</h3>
+
+<pre><code>IE 6                  .test{_width:200px;}
+IE6/IE7               .test{+width:100px;}
+IE6/IE7               .test{*width:200px}
+</code></pre>
+
+<h3>3. 选择符前缀法</h3>
+
+<pre><code>IE6/IE7        *html div{border-color:red;}
+IE 7           *+html div{border-color:red;}
+</code></pre>
+
+<h3>4. 样式属性后缀法</h3>
+
+<pre><code>all IE           .test{background:#ace\9}
+gte IE8          .test{background:#ace\0}
+gte IE9          .test{background:#ace\9\0}
+</code></pre>
+<h3>5. :root根元素伪选择</h3>
+<p>:root是CSS3定义的选择器，能被IE9及以上以及其他现代浏览器识别</p>
+<pre><code>not IE8- .test{background:#ace\9}</code></pre>
+</section>

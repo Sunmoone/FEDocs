@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/bootstrap-v2.css">
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<link rel="stylesheet" type="text/css" href="./css/sign-in.css">
+</head>
+<body>
+	<div class="signin">
+		<div class="signin_title">
+			<div class="signin_title_logo fl"></div>
+			<div class="signin_title_name fl">康邦内容管理系统</div>
+		</div>
+		<div class="signin_bar">
+			<div class="signin_bar_inner">Login</div>
+			<div class="signin_bar_triangle"></div>
+		</div>
+		<div class="signin_form">
+			<form name="form" class="form-horizontal" action="#" method="post">
+				<fieldset>
+					 <div class="control-group">
+					    <label class="control-label" for="username">用户名</label>
+					    <div class="controls">
+					      <input type="text" id="uidtxt" name="userName">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="passwords">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+					    <div class="controls">
+					      <input type="password" id="pwdtxt" name="passWord">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="v_code">验证码</label>
+					    <div class="controls">
+					      <input type="text" class="v_code" name="verificationCode">
+					      <div class="v_code_generator">
+					      	  <img src="#"/>
+					      </div>
+					      <a class="v_code_a" href="#" >密码找回</a>
+					    </div>
+					  </div>
+					<div class="control-group">
+					    <div class="controls">
+							<div class="error-text">
+						    	用户名错误，请重新输入用户名！
+				     		</div> 					
+					    </div>
+					 </div>				
+				   <div class="control-group">
+				    	<div class="controls">
+				    		<input type="submit" class="btn btn-primary" value="登 录" />
+				    		<input type="button" class="btn ml50" value="注册" />
+						</div>
+				  </div>
+				</fieldset>
+			</form>
+		</div>
+
+	</div>
+	<div class="signin_shadow"></div>
+</body>
+</html>

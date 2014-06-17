@@ -1,0 +1,72 @@
+html,body{height: 100%}
+body{font-size: 12px;font-family: "Microsoft YaHei";position: relative;}
+a,a:hover,a:visited,a:active,a:focus{text-decoration: none;color:#000;outline: none;}
+input:focus{outline: none!important;}
+ul, ol{margin: 0}
+.btn:focus{outline: none;}
+.table td{padding: 4px;}
+.border_r{border-right: 1px solid #456D91}
+.table {font-size: 12px;}
+
+.top{height: 93px;width:100%;z-index: 100;position:fixed;overflow: hidden;background:url("../images/top_bg.png");border-bottom: 2px solid #555;color: #fff;box-shadow: 1px 1px 1px #999}
+.top a{color: #fff}
+
+.top_left{float: left}
+.brand{height: 66px;background: url("../images/brand.png");background-repeat:no-repeat;position: relative;top: 10px;left:10px;}
+.brand_inner{font-family: 'Microsoft YaHei';font-size: 18px;color:#fff;font-weight:normal;margin-left: 100px;position: relative;top:45px;}
+
+.top_nav{background: url("../images/top_column_bg.png");height: 57px;margin-top: 36px;margin-left: 100px;float:left;overflow: hidden;display:inline;}
+.top_nav_items li{float: left}
+
+.top_nav_item{display:block;width: 79px;height: 57px;float: left;margin-left: 2px;background-repeat: no-repeat;background-position:0px 0px;padding-top: 34px;color:#fff;font-size:12px;text-align: center;cursor:default;}
+.top_nav_item_1{background: url(../images/toplink_1.png);}
+.top_nav_item_2{background: url(../images/toplink_2.png);}
+.top_nav_item_3{background: url(../images/toplink_3.png);}
+.top_nav_item_4{background: url(../images/toplink_4.png);}
+.top_nav_item_5{background: url(../images/toplink_5.png);}
+.top_nav_item_6{background: url(../images/toplink_6.png);}
+.top_nav_item_7{background: url(../images/toplink_7.png);}
+.top_nav_item:hover{background-position:0px -57px;color:#9ebecd;}
+.top_nav_item_active{background-position:0px -57px;color:#9ebecd;}
+
+.top_right{width: 260px;height: 77px;margin-top: 20px;padding:0 10px;background:url(../images/top_right_bg.png);background-repeat: no-repeat;float: right;}
+.top_right_person{padding-left:20px;background:url(../images/person_info.png);background-repeat: no-repeat;float: left;}
+.top_right_school{padding-left:20px;background:url(../images/school_link.png);background-repeat: no-repeat;float: left;margin-left: 20px}
+.top_right_logout{padding-left:20px;background:url(../images/logout.png);background-repeat: no-repeat;float: right;}
+.top_right_info{float: left;width: 180px;margin-top: 10px;}
+.top_right_admin{width: 45px;height:45px;background:url(../images/admin.png);float: right;position: relative;top: 6px}
+
+
+
+.main{position: absolute;background: #c8d8e4;height: 100%;width: 100%}
+/*main-left*/
+.main_left{width: 183px;height: 100%;position: absolute;z-index: 10}
+
+.left_nav{height:100%;width: 50px;position: absolute;background: #c8d8e4;border-right: 1px solid #a6becf;}
+.left_nav_items{margin-top: 93px;}
+.left_nav_item{padding: 10px 15px;display:block;font-family: Microsoft YaHei;line-height:110%;font-size: 16px;cursor: default;color: #333;border-top: 1px solid  #c8d8e4;border-bottom: 1px solid  #c8d8e4;}
+.left_nav_item:hover{background:#e4ebf4;border-top: 1px solid #a6becf;border-bottom: 1px solid #a6becf;border-right: 1px solid #e4ebf4;margin-right: -1px;}
+.left_nav_item_active{background:#e4ebf4;border-top: 1px solid #a6becf;border-bottom: 1px solid #a6becf;border-right: 1px solid #e4ebf4;margin-right: -1px;}
+
+.left_nav_sub{height: 100%;width:132px;position: absolute;left:50px;background:#e4ebf4;}
+.left_nav_sub_items{margin-top: 95px}
+/*.left_nav_sub{transition:all ease-out 1s;}*/
+.left_nav_sub_item{display:block;width: 132px;height: 22px;background-repeat: no-repeat;background-position: 0px 0px;color: #555;font-size: 12px;text-align: center;cursor: default;padding-top: 86px;}
+.left_nav_sub_item_1{background: url(../images/lefticon_1.png);}
+.left_nav_sub_item_2{background: url(../images/lefticon_2.png);}
+.left_nav_sub_item_3{background: url(../images/lefticon_3.png);}
+.left_nav_sub_item_4{background: url(../images/lefticon_4.png);}
+.left_nav_sub_item_5{background: url(../images/lefticon_5.png);}
+.left_nav_sub_item:hover{background-position: 0px -108px;}
+.left_nav_sub_item_active{background-position: 0px -108px;}
+
+/*main-right*/
+
+.main_right{position: fixed;height: 100%;width: 100%;background: #fff;}
+#view{margin-top: 95px;margin-left: 183px;position: relative;overflow: auto;}
+
+
+
+.footer{height:20px;width: 100%;position: absolute;bottom: 0px;background: url(../images/footer_bg.png),#fff;background-position: center;background-repeat: no-repeat;text-align: center;}
+
+

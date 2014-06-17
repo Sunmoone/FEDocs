@@ -1,0 +1,77 @@
+<article class="m-article">
+	<h3>CSS3 媒体查询</h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>概述</dt>
+		<dd>
+			<p>通过媒体查询为不同的设备和屏幕大小适配不同的样式。</p>
+		</dd>
+		<dt>Media 代码</dt>
+		<dd>
+			<pre class="prettyprint linenums">
+/* media */
+/* 横屏 */
+@media screen and (orientation:landscape){
+      
+}
+/* 竖屏 */
+@media screen and (orientation:portrait){
+      
+}
+/* 窗口宽度 &gt; 1440 */
+@media screen and (min-width:1440px){
+      
+}				
+/* 窗口宽度 &lt; 1440,设计宽度=1280 */
+@media screen and (max-width:1440px){
+      
+}				
+/* 窗口宽度 &lt; 1280,设计宽度=960 */
+@media screen and (max-width:1279px){
+      
+}				
+/* 窗口宽度 &lt; 960,设计宽度=768 */
+@media screen and (max-width:959px){
+      
+}
+/* 窗口宽度 &lt; 768,设计宽度=640 */
+@media screen and (max-width:767px){
+      
+}
+/* 窗口宽度 &lt; 640,设计宽度=480 */
+@media screen and (max-width:639px){
+      
+}
+/* 窗口宽度 &lt; 480,设计宽度=320 */
+@media screen and (max-width:479px){
+      
+}
+/* windows UI 贴靠 */
+@media screen and (-ms-view-state:snapped){
+      
+}
+/* 打印 */
+@media print{
+      
+} </pre>
+		</dd>
+		<dt>使用方法</dt>
+		<dd>
+			<p>通过右键另存为下载 <a href="download/css/reset.css" target="_blank">reset.css</a>，直接使用或将代码复制到你的css文件顶部。</p>
+		</dd>
+		<dt>使用举例</dt>
+		<dd>
+			<p>窗口宽度window 大于960px 小于1440px 时，设置#wrapper 宽度800px</p>
+			<p>窗口宽度window 小于960px 时， 设置#wrapper 宽度600px</p>
+			<pre class="prettyprint linenums">
+/* 窗口宽度 &lt; 1440px 时的样式规则 */
+@media screen and (max-width:1440px){
+   #wrapper{ width:800px } 
+}
+/* 窗口宽度 &lt; 960px 时的样式规则 */
+@media screen and (max-width:959px){
+   #wrapper{ width:600px }   
+} </pre>
+		</dd>
+	</dl>
+</article>

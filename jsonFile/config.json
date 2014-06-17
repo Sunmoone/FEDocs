@@ -1,0 +1,363 @@
+[
+	{
+		"pathID": "standard",
+		"disName": "规范",
+		"subset": [
+					{
+						"pathID": "html-syntax",
+						"disName": "Html 书写规范"
+					},
+					{
+						"pathID": "html-best-practice",
+						"disName": "Html 最佳实践"
+					},
+					{
+						"pathID": "css-classify",
+						"disName": "CSS 结构分类"
+					},
+					{
+						"pathID": "css-name",
+						"disName": "CSS 命名规则"
+					},
+					{
+						"pathID": "css-format",
+						"disName": "CSS 代码格式"
+					},
+					{
+						"pathID": "css-optimize",
+						"disName": "CSS 优化方案"
+					},
+					{
+						"pathID": "css-best-practice",
+						"disName": "CSS 最佳实践"
+					},
+					{
+						"pathID": "css-bad-practice",
+						"disName": "CSS 不推荐写法"
+					}
+		]
+	},
+	{
+		"pathID": "basic",
+		"disName": "基础库",
+		"subset": [
+					{
+						"pathID": "css-reset",
+						"disName": "CSS Reset"
+					},
+					{
+						"pathID": "css-reset-html5",
+						"disName": "CSS Reset for Html5"
+					},
+					{
+						"pathID": "css-function",
+						"disName": "CSS Function"
+					},
+					{
+						"pathID": "css-demension",
+						"disName": "CSS 尺寸位置"
+					},
+					{
+						"pathID": "css-media",
+						"disName": "CSS3 媒体查询"
+					},
+					{
+						"pathID": "css-animate",
+						"disName": "CSS3 动画"
+					},
+					{
+						"pathID": "html-template",
+						"disName": "HTML 模板"
+					}
+		]
+	},
+	{
+		"pathID": "layout",
+		"disName": "布局",
+		"subset": [
+					{
+						"pathID": "common",
+						"disName": "常用布局"
+					},
+					{
+						"pathID": "grid-system",
+						"disName": "栅格系统"
+					},
+					{
+						"pathID": "fluid-grid-system",
+						"disName": "流式栅格系统"
+					},
+					{
+						"pathID": "fixed-layout",
+						"disName": "固定布局"
+					},
+					{
+						"pathID": "fluid-layout",
+						"disName": "流式布局"
+					},
+					{
+						"pathID": "responsive-layout",
+						"disName": "响应式布局"
+					}
+		]
+	},
+	{
+		"pathID": "style",
+		"disName": "样式",
+		"subset": [
+					{
+						"pathID": "typography",
+						"disName": "排版"
+					},
+					{
+						"pathID": "table",
+						"disName": "表格"
+					},
+					{
+						"pathID": "form",
+						"disName": "表单"
+					},
+					{
+						"pathID": "button",
+						"disName": "按钮"
+					},
+					{
+						"pathID": "icon",
+						"disName": "图标"
+					}
+		]
+	},
+	{
+		"pathID": "components",
+		"disName": "组件",
+		"subset": [
+					{
+						"pathID": "dropdowns",
+						"disName": "下拉菜单"
+					},
+
+					{
+						"pathID": "buttonGroups",
+						"disName": "按钮组"
+					},
+					{
+						"pathID": "buttonDropdowns",
+						"disName": "按钮下拉菜单"
+					},
+					{
+						"pathID": "navs",
+						"disName": "导航"
+					},
+					{
+						"pathID": "navbar",
+						"disName": "导航条"
+					},
+					{
+						"pathID": "breadcrumbs",
+						"disName": "面包屑导航"
+					},
+					{
+						"pathID": "pagination",
+						"disName": "分页"
+					},
+					{
+						"pathID": "labels-badges",
+						"disName": "标签与徽章"
+					},
+					{
+						"pathID": "typography",
+						"disName": "排版"
+					},
+					{
+						"pathID": "thumbnails",
+						"disName": "缩略图"
+					},
+					{
+						"pathID": "alerts",
+						"disName": "警告框"
+					},
+					{
+						"pathID": "progress",
+						"disName": "进度条"
+					},
+					{
+						"pathID": "media",
+						"disName": "媒体对象"
+					},
+					{
+						"pathID": "misc",
+						"disName": "其他"
+					}
+		]
+	},	
+	{
+		"pathID": "plugin",
+		"disName": "JavaScript 插件",
+		"subset": [
+					{
+						"pathID": "overview",
+						"disName": "概览"
+					},
+
+					{
+						"pathID": "transitions",
+						"disName": "过渡效果"
+					},
+					{
+						"pathID": "modals",
+						"disName": "模态对话框"
+					},
+					{
+						"pathID": "dropdowns",
+						"disName": "下拉菜单"
+					},
+					{
+						"pathID": "scrollspy",
+						"disName": "滚动监听"
+					},
+					{
+						"pathID": "tabs",
+						"disName": "标签页"
+					},
+					{
+						"pathID": "tooltips",
+						"disName": "工具提示"
+					},
+					{
+						"pathID": "popovers",
+						"disName": "弹出提示"
+					},
+					{
+						"pathID": "alerts",
+						"disName": "警告框"
+					},
+					{
+						"pathID": "buttons",
+						"disName": "状态按钮"
+					},
+					{
+						"pathID": "collapse",
+						"disName": "折叠"
+					},
+					{
+						"pathID": "carousel",
+						"disName": "轮播"
+					},
+					{
+						"pathID": "typehead",
+						"disName": "输入提示"
+					},
+					{
+						"pathID": "affix",
+						"disName": "附加导航"
+					}
+		]
+	},	
+	{
+		"pathID": "ng-cms",
+		"disName": "NG-CMS框架",
+		"subset": [
+					{
+						"pathID": "introduce",
+						"disName": "简述"
+					},
+					{
+						"pathID": "implemente",
+						"disName": "实现逻辑"
+					},
+					{
+						"pathID": "ui-module",
+						"disName": "界面模块"
+					}
+		]
+	},
+	{
+		"pathID": "seed",
+		"disName": "快速开始",
+		"subset": [
+					{
+						"pathID": "portal",
+						"disName": "门户网站"
+					},
+					{
+						"pathID": "static",
+						"disName": "静态网站"
+					}
+		]
+	},
+	{
+		"pathID": "utility",
+		"disName": "实用",
+		"subset": [
+					{
+						"pathID": "zdialog",
+						"disName": "zDialog弹窗改进"
+					},
+					{
+						"pathID": "miniDialog",
+						"disName": "js弹窗"
+					},
+					{
+						"pathID": "iframe-ah",
+						"disName": "iframe高度自适应"
+					},
+					{
+						"pathID": "js-scrollbar",
+						"disName": "js滚动条"
+					},
+					{
+						"pathID": "js-drag",
+						"disName": "js拖拽"
+					},
+					{
+						"pathID": "magnifier",
+						"disName": "js图片放大镜"
+					}
+		]
+	},
+	{
+		"pathID": "optimize",
+		"disName": "Yahoo优化准则",
+		"subset": [
+					{
+						"pathID": "content",
+						"disName": "内容"
+					},
+					{
+						"pathID": "server",
+						"disName": "服务器"
+					},
+					{
+						"pathID": "cookie",
+						"disName": "Cookie"
+					},
+					{
+						"pathID": "css",
+						"disName": "CSS"
+					},
+					{
+						"pathID": "javascript",
+						"disName": "JavaScript"
+					},
+					{
+						"pathID": "image",
+						"disName": "图片"
+					}
+		]
+	},
+	{
+		"pathID": "compatiable",
+		"disName": "浏览器兼容",
+		"subset": [
+					{
+						"pathID": "ie-css-hack",
+						"disName": "为IE 编写代码"
+					},
+					{
+						"pathID": "css-trick",
+						"disName": "CSS Trick"
+					}
+		]
+	}
+
+]

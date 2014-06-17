@@ -1,0 +1,247 @@
+<article>
+	<div class="page-header">
+		<h1>下拉菜单</h1>
+	</div>
+
+	<h2>案例</h2>
+	<p>
+		用于展示可切换、有关联的一系列链接。与
+		<a href="#/plugin/dropdowns">下拉菜单JavaScript插件</a>
+		配合使用。
+	</p>
+	<div class="bs-docs-example">
+		<div class="dropdown clearfix">
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+				<li>
+					<a tabindex="-1" href="#">Action</a>
+				</li>
+				<li>
+					<a tabindex="-1" href="#">Another action</a>
+				</li>
+				<li>
+					<a tabindex="-1" href="#">Something else here</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<a tabindex="-1" href="#">Separated link</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<pre class="prettyprint linenums">
+&lt;ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu"&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="divider"&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+	<h2>标记</h2>
+	<p>
+		以下是下拉菜单所需的HTML。下拉菜单的触发器和整个下拉菜单都需要包裹在
+		<code>.dropdown</code>
+		中，或者声明为
+		<code>position: relative;</code>
+		的其它页面元素中。
+	</p>
+
+	<pre class="prettyprint linenums">
+&lt;div class="dropdown"&gt;
+  &lt;!-- Link or button to toggle dropdown --&gt;
+  &lt;ul class="dropdown-menu" role="menu"  aria-labelledby="dLabel"&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+	<h2>选项</h2>
+	<p>菜单可以右对齐，并且可以添加二级下拉菜单。</p>
+
+	<h3>对齐菜单</h3>
+	<p>
+		向
+		<code>.dropdown-menu</code>
+		添加
+		<code>.pull-right</code>
+		即可右对齐下拉菜单。
+	</p>
+	<pre class="prettyprint linenums">
+&lt;ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel"&gt;
+  ...
+&lt;/ul&gt;
+</pre>
+
+	<h3>禁用菜单选项</h3>
+	<p>
+		向
+		<code>&lt;li&gt;</code>
+		添加
+		<code>.disabled</code>
+		即可禁用菜单中的某个链接。
+	</p>
+	<div class="bs-docs-example">
+		<div class="dropdown clearfix">
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+				<li>
+					<a tabindex="-1" href="#">Regular link</a>
+				</li>
+				<li class="disabled">
+					<a tabindex="-1" href="#">Disabled link</a>
+				</li>
+				<li>
+					<a tabindex="-1" href="#">Another link</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<pre class="prettyprint linenums">
+&lt;ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu"&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Regular link&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="disabled"&gt;&lt;a tabindex="-1" href="#"&gt;Disabled link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+	<h3>下拉菜单的子菜单</h3>
+	<p>
+		通过添加一些简单的标记，可以给下拉菜单增加一个二级菜单，这个二级菜单会在鼠标悬停时自动展现，就像OS X中的效果。在现有的下拉菜单中，给任意的
+		<code>li</code>
+		添加
+		<code>.dropdown-submenu</code>
+		即可自动赋予一个二级菜单。
+	</p>
+	<div class="bs-docs-example bs-docs-example-submenus">
+
+		<div class="pull-left">
+			<p class="muted">默认样式</p>
+			<div class="dropdown clearfix">
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+					<li>
+						<a tabindex="-1" href="#">Action</a>
+					</li>
+					<li>
+						<a tabindex="-1" href="#">Another action</a>
+					</li>
+					<li>
+						<a tabindex="-1" href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li class="dropdown-submenu">
+						<a tabindex="-1" href="#">More options</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="pull-left">
+			<p class="muted">向上弹出的子菜单</p>
+			<div class="dropup">
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+					<li>
+						<a tabindex="-1" href="#">Action</a>
+					</li>
+					<li>
+						<a tabindex="-1" href="#">Another action</a>
+					</li>
+					<li>
+						<a tabindex="-1" href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li class="dropdown-submenu">
+						<a tabindex="-1" href="#">More options</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="pull-left">
+			<p class="muted">左侧弹出的子菜单</p>
+			<div class="dropdown">
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+					<li>
+						<a tabindex="-1" href="#">Action</a>
+					</li>
+					<li>
+						<a tabindex="-1" href="#">Another action</a>
+					</li>
+					<li>
+						<a tabindex="-1" href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li class="dropdown-submenu pull-left">
+						<a tabindex="-1" href="#">More options</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="#">Second level link</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	<pre class="prettyprint linenums">
+&lt;ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
+  ...
+  &lt;li class="dropdown-submenu"&gt;
+    &lt;a tabindex="-1" href="#"&gt;More options&lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</article>

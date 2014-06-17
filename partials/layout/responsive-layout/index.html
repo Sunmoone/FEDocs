@@ -1,0 +1,71 @@
+<article class="m-article">
+	<h3>响应式布局</h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>概述</dt>
+		<dd>
+			<p>利用媒体查询，为不同浏览设备或宽度情况应用不同的样式。</p>
+		</dd>
+		<dt>常见设备的宽度</dt>
+		<dd>
+			<table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>布局宽度</th>
+                <th>列宽</th>
+                <th>间隙宽度</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>大屏幕</td>
+                <td>大于等于1200px</td>
+                <td>70px</td>
+                <td>30px</td>
+              </tr>
+              <tr>
+                <td>默认</td>
+                <td>大于等于980px</td>
+                <td>60px</td>
+                <td>20px</td>
+              </tr>
+              <tr>
+                <td>平板</td>
+                <td>大于等于768px</td>
+                <td>42px</td>
+                <td>20px</td>
+              </tr>
+              <tr>
+                <td>手机到平板</td>
+                <td>小于等于767px</td>
+                <td class="muted" colspan="2">流式列，无固定宽度</td>
+              </tr>
+              <tr>
+                <td>手机</td>
+                <td>小于等于480px</td>
+                <td class="muted" colspan="2">流式列，无固定宽度</td>
+              </tr>
+            </tbody>
+          </table>
+		</dd>
+		<dd>
+			<pre class="prettyprint linenums">
+				/* 大屏幕 */
+@media (min-width: 1200px) { ... }
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* 横向放置的手机和竖向放置的平板之间的分辨率 */
+@media (max-width: 767px) { ... }
+ 
+/* 横向放置的手机及分辨率更小的设备 */
+@media (max-width: 480px) { ... }</pre>
+		</dd>
+		<dt>使用方法</dt>
+		<dd>
+			<p>参见基础库 <a href="/base/css-media" target="_blank">CSS3 媒体查询</a>。</p>
+		</dd>
+	</dl>
+</article>

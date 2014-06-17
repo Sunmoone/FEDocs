@@ -1,0 +1,145 @@
+<article>
+	<div class="page-header">
+              <h1>轮播（Carousel） <small>bootstrap-carousel.js</small></h1>
+            </div>
+
+            <h2>轮播案例</h2>
+            <p>下面就是一个轮播组件的案例。</p>
+            <div class="bs-docs-example">
+              <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img ng-src="{{ImagePATH}}/bootstrap-mdo-sfmoma-01.jpg" alt="">
+                    <div class="carousel-caption">
+                      <h4>First Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img ng-src="{{ImagePATH}}/bootstrap-mdo-sfmoma-02.jpg" alt="">
+                    <div class="carousel-caption">
+                      <h4>Second Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img ng-src="{{ImagePATH}}/bootstrap-mdo-sfmoma-03.jpg" alt="">
+                    <div class="carousel-caption">
+                      <h4>Third Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div id="myCarousel" class="carousel slide"&gt;
+  &lt;ol class="carousel-indicators"&gt
+    &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt&lt;/li&gt
+    &lt;li data-target="#myCarousel" data-slide-to="1"&gt&lt;/li&gt
+    &lt;li data-target="#myCarousel" data-slide-to="2"&gt&lt;/li&gt
+  &lt;/ol&gt
+  &lt;!-- Carousel items --&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="active item"&gt;…&lt;/div&gt;
+    &lt;div class="item"&gt;…&lt;/div&gt;
+    &lt;div class="item"&gt;…&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Carousel nav --&gt;
+  &lt;a class="carousel-control left" href="#myCarousel" data-slide="prev"&gt;&amp;lsaquo;&lt;/a&gt;
+  &lt;a class="carousel-control right" href="#myCarousel" data-slide="next"&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+            <div class="alert alert-warning">
+              <strong>注意！</strong>
+              当使用轮播组件时，请将案例中的图片替换为你需要展示的图片。
+            </div>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>调用方式</h2>
+
+            <h3>通过data属性</h3>
+            <p>使用data属性可以很容易的控制轮播的位置。<code>data-slide</code>内可以包含<code>prev</code> 或 <code>next</code>，他们可以改变当前帧。另外，使用<code>data-slide-to</code>可以传递某个帧的下标，例如<code>data-slide-to="2"</code>，这样就可以直接跳转到这个指定的帧 -- 下标从<code>0</code>开始计算。</p>
+
+            <h3>通过JavaScript</h3>
+            <p>手工启动轮播：</p>
+            <pre class="prettyprint linenums">$('.carousel').carousel()</pre>
+
+            <h3>选项</h3>
+            <p>参数可以通过data属性或JavaScript传递。对于data属性，将参数名称附着到<code>data-</code>之后，例如<code>data-interval=""</code>。</p>
+            <table class="table table-bordered table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 100px;">名称</th>
+                 <th style="width: 50px;">类型</th>
+                 <th style="width: 50px;">默认值</th>
+                 <th>描述</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>interval</td>
+                 <td>number</td>
+                 <td>5000</td>
+                 <td>在自动轮播过程中，展示每帧所停留的时间。如果是false，轮播不会自动启动。</td>
+               </tr>
+               <tr>
+                 <td>pause</td>
+                 <td>string</td>
+                 <td>"hover"</td>
+                 <td>当鼠标在轮播区域内时暂停循环，在区域外时则继续循环。</td>
+               </tr>
+              </tbody>
+            </table>
+
+            <h3>方法</h3>
+            <h4>.carousel(options)</h4>
+            <p>初始化一个带有可选参数<code>object</code>的轮播，并且自动开始循环播放。</p>
+<pre class="prettyprint linenums">
+$('.carousel').carousel({
+  interval: 2000
+})
+</pre>
+            <h4>.carousel('cycle')</h4>
+            <p>从左向右循环播放。</p>
+            <h4>.carousel('pause')</h4>
+            <p>停止循环播放。</p>
+            <h4>.carousel(number)</h4>
+            <p>循环到指定帧（下标从0开始，类似数组）。</p>
+            <h4>.carousel('prev')</h4>
+            <p>返回到上一帧。</p>
+            <h4>.carousel('next')</h4>
+            <p>下一帧。</p>
+
+            <h3>事件</h3>
+            <p>Bootstrap的轮播插件对外暴露了两个可被监听的事件。</p>
+            <table class="table table-bordered table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 150px;">事件</th>
+                 <th>描述</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>slide</td>
+                 <td>当<code>slide</code>实例方法被调用时，此事件会被立即触发。</td>
+               </tr>
+               <tr>
+                 <td>slid</td>
+                 <td>当切换完一帧后触发。</td>
+               </tr>
+              </tbody>
+            </table>
+</article>

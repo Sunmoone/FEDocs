@@ -1,0 +1,65 @@
+<article class="m-article">
+	<h3>常用布局</h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>底部自适应文档和窗口</dt>
+		<dd>
+			<style type="text/css">
+			 .html{width:100%;height:100%;margin:0;}
+			.g-doc{position:relative;min-height:100%;_height:100%;}
+			.g-bd{padding:0 0 60px;zoom:1;}
+			.g-ft{height:50px;margin:-50px 0 0;background:#ddd;}
+
+			/* 预览辅助样式 */
+			.g-bd p{padding:10px;color:#000;margin: 0}
+			.g-ft{background:#4eb3b9;}
+			.g-ft p{text-align: center;padding: 10px}
+			.m-demo{width: 100%;height:400px;position: relative;border:1px solid #999;padding-bottom: 0px;background: #eee;}
+		</style>
+			<div class="m-demo" resizy>
+				<div class="html">
+					<div class="g-doc">
+						<div class="g-bd">
+							<p>增加/减少内容，或改变窗口大小，Footer始终在底部。</p>
+							<p>增加/减少内容，或改变窗口大小，Footer始终在底部。</p>
+							<p>增加/减少内容，或改变窗口大小，Footer始终在底部。</p>
+							<p>增加/减少内容，或改变窗口大小，Footer始终在底部。</p>
+							<p>增加/减少内容，或改变窗口大小，Footer始终在底部。</p>
+						</div>
+					</div>
+					<div class="g-ft">
+						<p>底部始终在文档末尾，当文档较长时跟随在文档末尾，当文档较短时在窗口底部。</p>
+					</div>
+				</div>
+			</div>
+		</dd>
+		<dt>代码</dt>
+		<dd>
+			<pre  class="prettyprint linenums">
+ /* 底部自适应文档和窗口 */
+&lt;style&gt;
+html,body{width:100%;height:100%;margin:0;}
+.g-doc{position:relative;min-height:100%;_height:100%;}
+.g-bd{padding:0 0 60px;zoom:1;}
+.g-ft{height:50px;margin:-50px 0 0;background:#ddd;}
+&lt;/style&gt;
+&lt;html&gt;
+	&lt;body&gt;
+		&lt;div class="g-doc"&gt;
+			&lt;div class="g-bd"&gt;
+				&lt;p&gt;增加/减少内容，或改变窗口大小，Footer始终在底部。&lt;/p&gt;
+				&lt;p&gt;增加/减少内容，或改变窗口大小，Footer始终在底部。&lt;/p&gt;
+				&lt;p&gt;增加/减少内容，或改变窗口大小，Footer始终在底部。&lt;/p&gt;
+				&lt;p&gt;增加/减少内容，或改变窗口大小，Footer始终在底部。&lt;/p&gt;
+				&lt;p&gt;增加/减少内容，或改变窗口大小，Footer始终在底部。&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="g-ft"&gt;
+			&lt;p&gt;底部始终在文档末尾，当文档较长时跟随在文档末尾，当文档较短时在窗口底部。&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+		</dd>
+	</dl>
+</article>

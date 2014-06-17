@@ -1,0 +1,222 @@
+<section class="m-article">
+	<h3>js弹窗</h3>
+	<div class="u-line"></div>
+
+<h5><a href="http://init-life.com/Dialog/" target="_blank">演示地址</a></h5>
+
+
+<h4>JavaScript</h4>
+<pre class="prettyprint linenums">var Dialog =function() {
+        this.HtmlStr = null;
+        this.Url = null;
+        this.DragBar = null;
+        this.Title = null;
+        this.Top = null;
+        this.Left = null;
+        this.Width = null;
+        this.Height = null;
+        this.Center = false;
+        this.Middle = false;
+        this.BarHeight = 30;
+        // 以上可配置，以下不可配置
+        this.mask = null;
+        this.ID = null;
+        this.topWin = window.top;
+        this.topDoc = window.top.document;
+        this.box = null;
+        this.contMask = null;
+        this.close = null;
+        this.Cont = null;
+    };
+Dialog.prototype.launch=function(){
+        var _this = this,
+            dBox = this.box,
+            topDoc = this.topDoc;
+        this.init();  // format arguments
+        var dBox = this.box = this.topDoc.createElement("div");
+        var contMask = this.contMask = this.topDoc.createElement("div");
+        dBox.id = "_Dialog_" + this.topWin.dialogCount;
+        dBox.style.cssText = "position:absolute;border:0px; margin:0 auto; background:#dfdfdf;height:"+this.Height+"px;width:"+this.Width+"px;";
+        contMask.style.cssText = ";position:absolute;width:100%;height:100%;background:none;display:none;";
+        this.showMask();
+        dBox.appendChild(contMask);
+        this.topDoc.body.appendChild(dBox);
+        this.showCont();
+        if(this.DragBar){this.showDragBar();}
+        this.defineClose();
+        // prevent scroll
+        var topWinBody = this.topDoc.getElementsByTagName(this.topDoc.compatMode == "BackCompat" ? "BODY" : "HTML")[0];
+        topWinBody.style.overflow = "hidden";
+        topDoc.onscroll = function(){return false;}
+        this.setPosition();
+        if(this.DragBar){
+            this.initDrag()
+            dBox.onDrag=function(){
+                _this.contMask.style.display = "";
+            };
+            dBox.onDragEnd=function(){
+                    _this.contMask.style.display = "none";
+                    _this.fixDrag();
+            };
+        }
+        window.onresize = function(){return _this.setPosition()};
+};
+Dialog.prototype.showCont = function(){
+        var dCont = this.Cont = this.Url ? this.topDoc.createElement("iframe") : this.topDoc.createElement("div");
+        if(this.Url){
+            dCont.src = this.Url;
+            dCont.frameBorder = 0;
+        }else{
+            dCont.innerHTML = this.HtmlStr;
+        }
+        dCont.style.width ="100%";
+        dCont.style.height ="100%";
+        dCont.style.overflow = "auto";
+        this.box.appendChild(dCont);
+};
+Dialog.prototype.showDragBar = function(){
+        var dBar = this.DragBar = this.topDoc.createElement("div");
+        this.box.style.borderTop = "30px solid";
+        dBar.style.cssText = ";position:absolute; left:0;cursor:move;background:#fff;border-bottom:1px solid #999;border-left:100px solid #fff;border-right:100px solid #fff;height:"+this.BarHeight+"px;top:-"+this.BarHeight+"px;width:"+(this.Width-200)+"px";
+        this.box.appendChild(dBar);
+        if(this.Title){
+            var dTitle = this.topDoc.createElement("div");
+            dTitle.style.cssText = ";font-size:20px;color:#000;line-height:30px;text-align:center;";
+            dTitle.innerText = this.Title;
+            dTitle.textContent = this.Title;   // firefox
+            dBar.appendChild(dTitle);
+        }
+};
+Dialog.prototype.defineClose = function(){
+        var _this = this,
+            thisWin = this.topWin;
+        var dClose = this.close = this.topDoc.createElement("a");
+        dClose.style.cssText = ";position:fixed;top:10px;right:10px;display:block;width:50px;height:50px;background:url(img/close2.png);cursor:pointer;*position:absolute;*right:30px;*top:"+thisWin.scrollTop+"px;";
+        this.topDoc.body.appendChild(dClose);
+        dClose.onmouseover = function(){dClose.style.background="url(img/close2w.png)"}
+        dClose.onmouseout = function(){dClose.style.background="url(img/close2.png)"}
+        dClose.onclick = function(){return _this.kill()};
+}
+Dialog.prototype.showMask= function(){
+        var mask = this.mask = this.topDoc.createElement("div");
+        mask.style.cssText = ";position:absolute;width:100%;background:#000;top:0;left:0;height:" + this.topWin.scrollHeight +"px";
+        this.setFilter(mask,0.5);
+        this.topWin.document.body.appendChild(mask);
+};
+Dialog.prototype.kill = function(){
+    var thisDialog = this.box,
+        thisMask = this.mask,
+        thisClose = this.close;
+    thisDialog.parentNode.removeChild(thisDialog);
+    thisMask.parentNode.removeChild(thisMask);
+    thisClose.parentNode.removeChild(thisClose);
+    this.topWin.dialogCount -= 1;
+    if(this.topWin.dialogCount == 0){
+        var topWinBody = this.topDoc.getElementsByTagName(this.topDoc.compatMode == "BackCompat" ? "BODY" : "HTML")[0];
+            topWinBody.style.overflow = "";
+            this.topDoc.onscroll = null;
+    };
+};
+Dialog.prototype.cWinDimensions = function() {
+        var thisWin = this.topWin;
+        var doc = thisWin.document;
+        thisWin.clientWidth = doc.compatMode == "BackCompat" ? doc.body.clientWidth : doc.documentElement.clientWidth;
+        thisWin.clientHeight = doc.compatMode == "BackCompat" ? doc.body.clientHeight : doc.documentElement.clientHeight;
+        thisWin.scrollLeft = Math.max(doc.documentElement.scrollLeft, doc.body.scrollLeft);
+        thisWin.scrollTop = Math.max(doc.documentElement.scrollTop, doc.body.scrollTop);
+        thisWin.scrollWidth = Math.max(doc.documentElement.scrollWidth, doc.body.scrollWidth);
+        thisWin.scrollHeight = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight, doc.body.clientHeight, doc.documentElement.clientHeight);
+}
+Dialog.prototype.setPosition = function(){
+    this.cWinDimensions();
+    var dBox = this.box,
+        topWin = this.topWin;
+        t = this.Top,
+        l = this.Left;
+    if(this.Center == true){
+        l = (topWin.clientWidth - this.Width)*0.5;
+    };
+    if(this.Middle == true){
+        t = (topWin.clientHeight - this.Height)*0.5;
+    };
+    dBox.style.top = t + topWin.scrollTop + "px";
+    dBox.style.left = l + topWin.scrollLeft + "px";
+};
+Dialog.prototype.setFilter = function(element, lev){
+    element.style.opacity = lev;
+    element.style.filter = "alpha(opacity=" + lev*100 + ")";
+};
+Dialog.prototype.init =function(){
+        var topWin = this.topWin,
+            Width = this.Width,
+            Height = this.Height,
+            Top = this.Top,
+            Left = this.Left;
+        if(topWin.dialogCount == undefined){
+            topWin.dialogCount = 1;
+        }else{topWin.dialogCount += 1;}
+        this.cWinDimensions();
+        if(Width == null){
+            this.Width = topWin.clientWidth*0.7;
+        }else if(Width.indexOf("%") != -1){
+            this.Width = parseInt(Width)*0.01*topWin.clientWidth;
+        }else if(Width.indexOf("px") != -1){
+            this.Width = parseInt(Width);
+        };
+        if(Height == null){
+            this.Height = topWin.clientHeight*0.7;
+        }else if(Height.indexOf("%") != -1){
+            this.Height = parseInt(Height)*0.01*topWin.clientHeight;
+        }else if(Height.indexOf("px") != -1){
+            this.Height = parseInt(Height);
+        };
+        if(Top == null){
+            this.Middle = true;
+        }else if(Top.indexOf("%") != -1){
+            this.Top = parseInt(Top)*0.01*topWin.clientHeight
+        }else if(Top.indexOf("px") != -1){
+            this.Top = parseInt(Top);
+        };
+        if(Left == null){
+            this.Center = true;
+        }else if(Left.indexOf("%") != -1){
+            this.Left = parseInt(Left)*0.01*topWin.clientWidth;
+        }else if(Left.indexOf("px") != -1){
+            this.Left = parseInt(Left);
+        };
+};
+Dialog.prototype.fixDrag = function(){
+        var _this = this,
+            topWin = this.topWin,
+            dBox = this.box;
+        var top = parseInt(dBox.style.top),
+            left= parseInt(dBox.style.left);
+        if(top &gt; topWin.clientHeight+topWin.scrollTop-_this.Height-_this.BarHeight){
+            dBox.style.top = topWin.clientHeight+topWin.scrollTop-_this.Height-_this.BarHeight-5+"px";
+        };
+        if(top &lt; topWin.scrollTop){
+            dBox.style.top = topWin.scrollTop+10+"px";
+        };
+        if(left &gt; topWin.clientWidth+topWin.scrollLeft-_this.Width){
+            dBox.style.left = topWin.clientWidth+topWin.scrollLeft-_this.Width-10+"px";
+        };
+        if(left &lt; topWin.scrollLeft){
+            dBox.style.left = topWin.scrollLeft+10+"px";
+        };
+}
+Dialog.prototype.initDrag = function(){
+        var topWin = this.topWin;
+            // topWin上面新建Drag 实例
+        var newDrag = new topWin.miniDrag();
+            newDrag.handler = this.DragBar;
+            newDrag.dragBody = this.box;
+            newDrag.init();
+};
+Dialog.prototype.getThisDialog = function(){
+    return document.getElementById("_Dialog_"+this.ID);
+};
+var getDom = function(id){
+         return typeof id == "string" ? document.getElementById(id) : id;
+};
+</pre>
+</section>

@@ -1,0 +1,171 @@
+[
+                  {
+                  	"id": "publicInfoManage",
+                  	"displayName":"公共信息管理",
+                    "icon": "top_nav_item_1",
+                    "child":[
+                   				{
+                   					"id": "notice",
+                   					"displayName": "通知管理",
+                   					"child": [
+                   								{
+               										"id": "noticeManage",
+                   									"displayName":"通知维护", 
+                   								 	"icon":"left_nav_sub_1",
+                                                                        "template": "classic"
+                   								},
+                   								{
+                   									"id": "noticeSend",
+                   									"displayName":"发送通知", 
+                   								 	"icon":"left_nav_sub_２"
+                   								}
+                   							  ]
+                   				},
+                   				{
+                   					"id": "user",
+                   					"displayName": "用户管理",
+                   					"child": [
+                   								{
+                   									"id": "studentInfoManage",
+                   									"displayName":"学生信息维护", 
+                   									"icon":"left_nav_sub_1",
+                                                                        "template":"classic"
+                   								},
+                   								{
+                   									"id": "teacherInfoManage",
+                   									"displayName":"教师信息通知", 
+                   								 	"icon":"left_nav_sub_２"
+                   								}
+                   							  ]
+                   				},
+                   				{
+                   					"id": "account",
+                   					"displayName": "账户管理",
+                   					"child": [
+                   								{
+                   									"id": "accountManage",
+                   									"displayName":"账户维护", 
+                   								 	"icon":"left_nav_sub_1"
+                   								}
+                   							  ]
+                   				},
+                   				{
+                   					"id": "company",
+                   					"displayName": "企业管理",
+                   					"child": [
+                   								{
+                   									"id": "companyInfoManage",
+                   									"displayName":"企业信息管理", 
+                   								 	"icon":"left_nav_sub_1"
+                   								},
+                   								{
+                   									"id": "jobInfoManage",
+                   									"displayName":"职位信息管理", 
+                   								 	"icon":"left_nav_sub_2"
+                   								},
+                   								{	"id": "companyCommentManage",
+                   									"displayName":"企业评价管理", 
+                   								 	"icon":"left_nav_sub_3"
+                   								}
+                   							  ]
+                   				}
+               				]
+          		  },
+                  {
+                  	"id": "studyCenter",
+                  	"displayName":"学习中心",
+                  	"icon": "top_nav_item_2",
+                  	"child": [
+                  				{
+                  					"id": "course",
+                  					"displayName": "课程管理",
+                  					"child": [
+                  								{
+                  									"id": "courseInfoManage",
+                  									"displayName": "课程信息",
+                  									"icon": "left_nav_sub_1"
+                  								}
+                  							]
+                  				},
+                  				{
+                  					"id": "class",
+                  					"displayName": "班级管理",
+                  					"child": [
+                  								{
+                  									"id": "classInfoManage",
+                  									"displayName": "班级信息",
+                  									"icon": "left_nav_sub_1"
+                  								}
+                  							]
+                  				},
+                  				{
+                  					"id": "onlineTest",
+                  					"displayName": "在线测试",
+                  					"child": [
+                  								{
+                  									"id": "questionLibrary",
+                  									"displayName": "题库管理",
+                  									"icon": "left_nav_sub_1"
+                  								},
+                  								{
+                  									"id": "testManage",
+                  									"displayName": "试题管理",
+                  									"icon": "left_nav_sub_1"
+                  								},
+                  								{
+                  									"id": "testPaperManage",
+                  									"displayName": "试卷管理",
+                  									"icon": "left_nav_sub_1"
+                  								}
+                  							]
+                  				},
+                  				{
+                  					"id": "publicSource",
+                  					"displayName": "公共资源",
+                  					"child": [
+                  								{
+                  									"id": "sourceManage",
+                  									"displayName": "资源管理",
+                  									"icon": "left_nav_sub_1"
+                  								}
+                  							]
+                  				},
+                  				{
+                  					"id": "recommentSource",
+                  					"displayName": "资源推荐库",
+                  					"child": [
+                  								{
+                  									"id": "recommentStudySource",
+                  									"displayName": "学习资源推荐",
+                  									"icon": "left_nav_sub_1"
+                  								}
+                  							]
+                  				},
+                  				{
+                  					"id": "studySpace",
+                  					"displayName": "学习园地",
+                  					"child": [
+                  								{
+                  									"id": "studyWorks",
+                  									"displayName": "学习园地作品",
+                  									"icon": "left_nav_sub_1"
+                  								},
+                  								{
+                  									"id": "studyChatRoom",
+                  									"displayName": "学习园地聊天室",
+                  									"icon": "left_nav_sub_1"
+                  								},
+                  								{
+                  									"id": "worksCategrory",
+                  									"displayName": "作品类别",
+                  									"icon": "left_nav_sub_1"
+                  								}
+                  							]
+                  				}
+                  			]
+                  },
+                  {"displayName":"师资管理","icon": "top_nav_item_3"},
+                  {"displayName":"交流互动","icon": "top_nav_item_4"},
+                  {"displayName":"前台展示","icon": "top_nav_item_5"},
+                  {"displayName":"系统管理","icon": "top_nav_item_6"}
+               ]

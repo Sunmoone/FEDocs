@@ -1,0 +1,75 @@
+<article class="m-article">
+	<h3>常用布局</h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>全屏自适应布局</dt>
+		<dd>
+			<style type="text/css">
+			 /* 全屏自适应布局 */
+			.g-bd{_height:auto;_padding:100px 0 50px;width:100%;height:100%;overflow:hidden;position: relative;}
+			.g-hd,.g-sd,.g-mn,.g-ft{position:absolute;left:0;}
+			.g-hd,.g-ft{width:100%;}
+			.g-sd,.g-mn{top:120px;bottom:70px;_height:100%;overflow:auto;}
+			.g-hd{top:0;height:100px;}
+			.g-sd{width:200px;}
+			.g-mn{_position:relative;left:220px;right:0;_top:0;_left:0;_margin-left:220px;}
+			.g-ft{bottom:0;height:50px;}
+
+			/* 预览辅助样式 */
+			.g-bd{border:1px solid #999;padding-bottom: 0px;position: relative;background: #eee;min-height: 500px;color:#fff;}
+			.g-bd p{text-align: center;line-height: 50px}
+			.g-hd, .g-sd, .g-ft {background:#4eb3b9;}
+			.g-mn{background:#B1D6DD;}
+			.sdad{height:100%;padding:10px;color:#fff;background:#B1D6DD;margin: 0}
+
+		</style>
+			<div>
+				<div class="g-bd f-cb" resizy>
+					<div class="g-hd">
+						<p>Header定高，宽度适应</p>
+					</div>
+					<div class="g-sd">
+						<p>左侧定宽，高度适应</p>
+					</div>
+					<div class="g-mn">
+						<p>右侧自适应</p>
+					</div>
+					<div class="g-ft">
+						<p>Footer贴底</p>
+					</div>
+					<h4 class="f-tac f-cl" style="clear:both">容器</h4>
+				</div>
+			</div>
+		</dd>
+		<dt>代码</dt>
+		<dd>
+			<pre  class="prettyprint linenums">
+ /* 全屏自适应布局 */
+&lt;style&gt;
+.g-bd{_height:auto;_padding:100px 0 50px;width:100%;height:100%;overflow:hidden;position: relative;}
+.g-hd,.g-sd,.g-mn,.g-ft{position:absolute;left:0;}
+.g-hd,.g-ft{width:100%;}
+.g-sd,.g-mn{top:120px;bottom:70px;_height:100%;overflow:auto;}
+.g-hd{top:0;height:100px;}
+.g-sd{width:200px;}
+.g-mn{_position:relative;left:220px;right:0;_top:0;_left:0;_margin-left:220px;}
+.g-ft{bottom:0;height:50px;}
+&lt;/style&gt;
+&lt;div class="g-bd f-cb"&gt;
+	&lt;div class="g-hd"&gt;
+		&lt;p&gt;Header定高，宽度适应&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="g-sd"&gt;
+		&lt;p&gt;左侧定宽，高度适应&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="g-mn"&gt;
+		&lt;p&gt;右侧自适应&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="g-ft"&gt;
+		&lt;p&gt;Footer贴底&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+		</dd>
+	</dl>
+</article>

@@ -1,0 +1,33 @@
+<article class="m-article">
+	<h3>HTML 最佳实践 </h3>
+	<div class="u-line"></div>
+	<dl>
+		<dt>CSS 在前, JavaScript 在后</dt>
+		<dd>
+			<p>CSS 放在页面头部，避免页面无样式显示。</p>
+			<p>JavaScript 放在页面底部，避免阻塞页面加载。</p>
+			<p>如果页面渲染对外部引入的JavaScript 有依赖，那么应该在头部引入。</p>
+		</dd>
+		<dt>语义化标签</dt>
+		<dd>
+			<p>HTML 负责内容结构，CSS 负责样式表现。不应该为了样式去使用标签，而应该由内容是什么决定。</p>
+			<p>例如Table　标签，就经常被用来使内容居中。实际要呈现的东西与“表格”并无关联情况下，应该使用更接近内容语义的标签。或者通用的(Div..)标签。</p>
+			<p>不要使用纯样式的标签。 font, center, big, strike　这4种标签在Html5 中已经被废弃。</p>
+			<ul>
+				<li>p, 段落</li>
+				<li>ul, li, 无序列表</li>
+				<li>ol, li, 有序列表</li>
+				<li>dl, dt, dd, 段落列表</li>
+				<li>h1, h2, h3, h4, h5, h6, 标题</li>
+				<li>table, 表格</li>
+				<li>tr, th,  表头</li>
+				<li>span, 行内文本</li>
+			</ul>
+			<p>正确的使用语义化标签不仅有助于减少兼容性bug, 提高代码可阅读性，还有利于SEO。</p>
+		</dd>
+		<dt>避免使用Iframe</dt>
+		<dd>
+			<p>Iframe　会创建另一个文档环境，耗费硬件资源，阻塞父级页面后续资源的加载。</p>
+		</dd>
+	</dl>
+</article>

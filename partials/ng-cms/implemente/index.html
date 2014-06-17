@@ -1,0 +1,358 @@
+<section class="m-article">
+	<h3>实现与代码逻辑</h3>
+	<div class="u-line"></div>
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="content">
+				<h4 class="f-fwb">结构布局</h4>
+<pre class="prettyprint linenums">
+＋－－－－－－－－－－－－－－－＋
+｜         一级导航         　　｜      &lt;html&gt;
+＋－－－－－－－－－－－－－－－＋            &lt;top-nav&gt;
+｜  |  ｜                 　　　 |         &lt;main&gt;
+｜二｜三｜                 　　　|            &lt;left-nav&gt;
+｜级｜级｜       视图            |            &lt;left-nav-sub&gt;
+｜导｜导｜                       |                &lt;view&gt;
+｜航｜航｜                       |         &lt;/main&gt;
+｜  |  |                        ｜      &lt;html&gt;
+＋－－－－－－－－－－－－－－－＋
+</pre>
+
+				<p>
+					这是整个视口的模版，view被include进去，根据查询加载不同的视图模版。
+					<br/>
+					为了保持各部分的相对独立，减少耦合，均采用绝对定位。
+	二级，三级导航区域用css技巧可以让高度适应，视图部分是拿js监听onload和onresize，实现的宽度高度适应。
+				</p>
+
+				<h4 class="f-fwb">导航</h4>
+
+				<p>
+					因为只有一个主视图模版，所有每一级导航都依赖于上级导航（父节点是否选中）。
+	把导航视为对象写到JSON，封装一个cmsService模块。如果该对象被选中，则遍历该对象的子对象，填充到下一级导航。
+				</p>
+
+<pre class="prettyprint linenums"> [
+ {
+  "id": "publicInfoManage",
+  "displayName": "公共信息管理",
+  "icon": "top_nav_item_1",
+  "child": [
+            {
+                "id": "notice",
+                "displayName": "通知管理",
+                "child": [
+                            {
+                                "id": "noticeManage",
+                                "displayName": "通知维护",
+                                "icon": "left_nav_sub_1"
+                            },
+                               ...
+                             ]
+               ...
+            ]
+  },
+  ...
+]</pre>
+
+				<p>为每级导航定义一些属性，如id用于文件目录，displayName用于显示，icon定义图标，child是该导航的子级。</p>
+
+				<p>取出JSON到 Controller, 赋给$scope，让视图层能访问到。</p>
+
+				<pre class="prettyprint linenums">var cmsControllers = angular.module('cmsControllers',['cmsService']);
+
+cmsControllers.controller('NavCtrl', function($scope,Navigators){
+      //三个层级的导航对象，初始为first-child
+      $scope.navs = Navigators;
+      $scope.leftNavs = $scope.navs[0].child;
+      $scope.leftNavSubs = $scope.navs[0].child[0].child;
+
+      //三个层级的导航id，用于生成url，初始为first-child
+      $scope.currNavId = $scope.navs[0].id;
+      $scope.currLeftNavId = $scope.navs[0].child[0].id;
+      $scope.currLeftNavSubId = $scope.navs[0].child[0].child[0].id;
+
+      $scope.toggleLeft = function(nav){
+        $scope.leftNavs = nav.child;
+        $scope.leftNavSubs = nav.child[0].child;    // 点击一级导航时，设置三级导航关联
+
+        $scope.currNavId=nav.id;
+        $scope.currLeftNavId=nav.child[0].id;
+        $scope.currLeftNavSubId = nav.child[0].child[0].id;
+      };
+      $scope.toggleLeftSub = function(leftNav){
+        $scope.leftNavSubs = leftNav.child;
+
+        $scope.currLeftNavId=leftNav.id;
+        $scope.currLeftNavSubId=leftNav.child[0].id;
+      };
+});</pre>
+
+				<p>对应的Html视图：</p>
+
+				<pre class="prettyprint linenums">&lt;!-- top nav --&gt;
+&lt;li ng-repeat="nav in navs"&gt;
+    &lt;a href="#/{{currNavId}}/{{currLeftNavId}}/{{currLeftNavSubId}}" ng-click="toggleLeft(nav)" class="top_nav_item {{nav.icon}}"&gt;{{nav.displayName}}&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;!-- left nav --&gt;
+&lt;li ng-repeat="leftNav in leftNavs"&gt;
+    &lt;a href="#/{{currNavId}}/{{currLeftNavId}}/{{currLeftNavSubId}}" ng-click="toggleLeftSub(leftNav)" class="left_nav_item {{leftNav.icon}}"&gt;{{leftNav.displayName}}&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;!-- left sub nav --&gt;
+&lt;li ng-repeat="leftNavSub in leftNavSubs"&gt;
+    &lt;a href="#/{{currNavId}}/{{currLeftNavId}}/{{leftNavSub.id}}" class="left_nav_sub_item left_nav_sub_item_{{$index+1}}"&gt;{{leftNavSub.displayName}}&lt;/a&gt;
+&lt;/li&gt;</pre>
+
+				<p>到现在，三个层级的导航就关联好了，接下来配置路由。</p>
+
+				<h4 class="f-fwb">路由</h4>
+
+				<p>三级导航对应三级目录，每个最终节点目录下有视图模版index.html</p>
+
+				<pre class="prettyprint linenums">－ －－－ 一级目录 x6
+	            － －－－ 二级目录 x5
+	                        － －－－ 三级目录 x3
+	                                   － －－－ 视图模版
+	                                         +-------------+
+	                                        ｜  index.html  |
+	                                         +-------------+
+</pre>
+
+				<p>
+					如果在XML下维护近百个记录的转发表，不仅不便于维护，执行效率也不高。
+	把路由可以搬到前端来，根据用三级参数拼接的url,动态查询视图模版，只有视图部分会被刷新。
+				</p>
+
+				<p>在$routeProvider中接收导航链接中拼合的url参数，匹配视图路径</p>
+
+				<pre class="prettyprint linenums">cmsApp.config(['$routeProvider', function($routeProvider){
+$routeProvider.
+    when('/',
+            {
+                templateUrl: 'partials/'+'welcome.html',
+                controller: 'WelcomeCtrl'
+            })
+    .when('/:navId/:leftNavId/:leftNavSubId',
+            {
+                templateUrl: function(params){return 'partials/view/'+params.navId+'/'+params.leftNavId+'/'+params.leftNavSubId; },
+                controller: 'viewCtrl'
+            })
+    .otherwise({redirectTo: '/cms'});
+}]);</pre>
+
+				<p>templateUrl接受String或Function类型参数，默认传入参数是$routeParams对象</p>
+
+				<h4 class="f-fwb">绑定数据与视图模版，增删改查的表格</h4>
+
+				<p>在templateUrl指向的视图模版中定义一个表格，准备绑定数据。</p>
+
+				<pre class="prettyprint linenums">&lt;div ng-controller="myGridCtrl"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;&lt;input type="checkbox" ng-click="allSelect()"&gt;&lt;/th&gt;
+                &lt;th ng-repeat='val in itemSequence.vals'&gt;{{val}}&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr ng-repeat="item in items"&gt;
+                &lt;td&gt;&lt;input type="checkbox" ng-checked="mySelections.indexOf(item) != -1" ng-click="itemSelect($index)"&gt;&lt;/td&gt;
+                &lt;td ng-repeat="key in itemSequence.keys"&gt;{{item[key]}}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</pre>
+
+				<p>
+					在Controller中请求数据，绑定到视图。
+					<br/>
+					在stuffs.json第一行加上配置信息，key对应的Table中文表头名。
+				</p>
+
+				<pre><code>{"name": "姓名", "number": "编号", "nationality": "国籍", "birthday": "出生日期", "score": "得分", "status": "状态"}
+	</code></pre>
+
+				<p>
+					定义一个itemSequence对象来记录这个顺序，因为ng-repeat是for-in循环，枚举的无序可能使“出生日期”跑到姓名前面。
+				</p>
+
+				<pre class="prettyprint linenums">cmsControllers.controller('viewCtrl', function($scope,viewData){
+    $scope.itemSequence={ keys:[], vals:[] };
+    $http.get('jsonFiles/players.json').success(function(data) {
+        $scope.items = data;
+        viewData.set_data(data);
+        var firstItem = $scope.items.shift();
+        angular.forEach(firstItem, function(value,key){
+            $scope.itemSequence.keys.push(key);
+            $scope.itemSequence.vals.push(value);
+        })
+    });
+})</pre>
+
+				<p>
+					将数据放到整个页面$scope中，保证myGridCtrl作用域以外的弹窗，操作到的是同一数据，定义一个叫viewData的Service
+				</p>
+
+				<pre class="prettyprint linenums">cmsServices.service('viewData', function(){
+      var data = [];
+       return {
+          get_data : function(){
+            return data;
+          },
+          update_data : function(pos,val){
+            data.splice(pos,1,val);
+          },
+          add_data : function(val){
+            data.unshift(val);
+          }
+      }
+});</pre>
+
+				<p>
+					在Grid控制器中定义增删改查方法，让表格数据可以被操作，因为是在viewCtrl以内，所以会继承$scope。
+					<br/>
+					在这里不需要操作完数据再去修改DOM以求得模型、视图的一致，因为AngularJS数据是双向绑定的。
+				</p>
+
+				<pre class="prettyprint linenums">cmsControllers.controller('myGridCtrl', function($scope,$modal){
+    $scope.mySelections = [];
+    $scope.itemSelect = function(idx) {
+        var flag = $scope.mySelections.indexOf($scope.items[idx]);
+        if (flag != -1) {
+            $scope.mySelections.splice(flag, 1)
+        } else {
+            $scope.mySelections.push($scope.items[idx])
+        }
+    }
+    $scope.allSelect = function() {
+        if ($scope.mySelections.length === $scope.items.length) {
+            $scope.mySelections = [];
+        } else {
+            $scope.mySelections = [];
+            for (var i = 0, l = $scope.items.length; i &lt; l; i++) {
+                $scope.mySelections.push($scope.items[i])
+            }
+        }
+    }
+    $scope.deleteSelected = function() {
+        angular.forEach($scope.mySelections, function(rowItem) {
+            $scope.items.splice($scope.items.indexOf(rowItem), 1);
+        });
+        $scope.mySelections = [];
+    };
+    $scope.callModal = function(val) {
+        var modalInstance = $modal.open({
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            resolve: {
+                items: function() {
+                    return val
+                }
+            }
+        });
+        modalInstance.result.then(function() {
+             $scope.mySelections = [];
+         };
+    };
+
+    $scope.modify = function() {
+        angular.forEach($scope.mySelections, function(rowItem) {
+            $scope.callModal({
+                type: 2,
+                title: "修改",
+                itemSequence: $scope.itemSequence,
+                itemIndex: $scope.items.indexOf(rowItem)
+            })
+        })
+    };
+
+    $scope.add = function() {
+        $scope.callModal({
+            type: 1,
+            title: "新增",
+            itemSequence: $scope.itemSequence
+        })
+    };</pre>
+
+				<p>
+					通过一个Modal弹窗来增加、修改表格数据，传入当前选择项，根据遍历itemSequence.keys来决定可录入的是那些条目，让弹窗模版更通用。
+				</p>
+
+				<!-- modal template -->
+                <pre class="prettyprint linenums">
+				&lt;script type="text/ng-template" id="myModalContent.html"&gt;
+	    &lt;div class="modal-header"&gt;&lt;h4&gt;{{ModalTitle}}&lt;/h4&gt; &lt;/div&gt;
+	    &lt;div class="modal-body"&gt;
+	        &lt;form name="form" role="form" ng-submit="addPerson()"&gt;
+	            &lt;div class="control-group" ng-repeat='i in itemSequence.keys'&gt;
+	                &lt;label  class="control-label"&gt;{{itemSequence.vals[$index]}}&lt;/label&gt;
+	                &lt;div class="controls"&gt;
+	                    &lt;input type="text" name="itemSequence.keys[$index]" ng-model="editItem[itemSequence.keys[$index]]"&gt;&lt;/div&gt;
+	            &lt;/div&gt;
+	        &lt;/form&gt;
+	    &lt;/div&gt;
+	    &lt;div class="modal-footer"&gt;
+	        &lt;button class="btn btn-primary" ng-click="ok()"&gt;OK&lt;/button&gt;
+	        &lt;button class="btn btn-warning" ng-click="cancel()"&gt;Cancel&lt;/button&gt;
+	    &lt;/div&gt;
+	&lt;/script&gt;</pre>
+
+				<p>Modal Controller</p>
+
+				<pre class="prettyprint linenums">cmsControllers.controller('ModalInstanceCtrl', function($scope, $modalInstance, items, viewData) {
+    $scope.ModalTitle = items.title;
+    $scope.itemSequence = items.itemSequence;
+    $scope.editItem = viewData.get_data()[items.itemIndex] || {};
+    $scope.models = items.itemSequence.keys;
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    };
+    $scope.excAdd = function() {
+        viewData.add_data($scope.editItem);
+        $modalInstance.close();
+    };
+    $scope.excModify = function() {
+        $modalInstance.close();
+    };
+    switch (items.type) {
+        case 1:
+            $scope.ok = $scope.excAdd;
+            break;
+        case 2:
+            $scope.ok = $scope.excModify;
+            break;
+    };
+
+});</pre>
+
+				<p>增删改完成了，现在利用filter来做查询，定义$scope.search = {}</p>
+
+				<pre class="prettyprint linenums">&lt;form&gt;
+    &lt;fieldset&gt;
+    &lt;label&gt;姓名&lt;/label&gt; &lt;input type="text" ng-model="search.name"&gt;
+    &lt;label&gt;编号&lt;/label&gt; &lt;input type="text" ng-model="search.number"&gt;
+    &lt;label&gt;国籍&lt;/label&gt; &lt;input type="text" ng-model="search.nationality"&gt;
+    &lt;label&gt;状态&lt;/label&gt; &lt;input type="text" ng-model="search.status"&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+
+				<p>遍历items时在后面指定filter为search对象，那么就会按对应的key过滤，名字过滤名字，编号过滤编号。</p>
+
+				<pre class="prettyprint linenums">&lt;tr ng-repeat="item in items | filter: search"&gt;
+	    &lt;td ng-repeat="key in itemSequence.keys"&gt;{{item[key]}}&lt;/td&gt;
+	&lt;/tr&gt;</pre>
+
+				<h4 class="f-fwb">视图模版的复用问题</h4>
+
+				<p>
+					目前的路由让每一个{url}对应一个<code>view/{url}/index.html</code> 模版片段。这些模版片段之间有很大的冗余。
+					<br/>
+					这里让Table, Modal尽量依赖于数据，尽量将其提升为通用的模版。再利用一个中间映射表，应该可以实现一对多。
+				</p>
+
+			</div>
+	</div>
+</div>	
+</section>

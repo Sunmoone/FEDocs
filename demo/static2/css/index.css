@@ -1,0 +1,37 @@
+html,body{font-size: 12px;font-family: Microsoft Yahei;background: #F6F6F6;height: 100%;color: #323232;margin: 0;padding: 0}
+ul{list-style-type: none;}
+a{text-decoration: none;color: #555}
+a:hover{text-decoration: underline;}
+.pageContainer{width: 950px;margin: 0 auto;position: relative;background: #FFF;min-height: 100%;height: 100%;height: auto!important;overflow: visible;}
+#top{}
+
+#footer{height: 80px;margin-top: 10px;background: #A90402;clear: both;}
+#footer p{text-align: center;color: #E4E4E4;line-height: 30px;}
+.topBanner{width: 950px;height: 116px;background: url(../images/topbg.png);}
+.topBanner h3{float: right;margin-right: 488px;margin-top: 70px;color: #680307;font-size: 22px;font-family: simSun;*display: inline;font-weight: bold;}
+.span9{width: 350px;float: left;margin-right: 10px;*display: inline;margin-top: 10px}
+.span6{width: 230px;float: left;*display: inline;margin-top: 10px;margin-right: 10px;} 
+.span18{width: 710px;float: left;*display: inline;margin-top: 10px} 
+/**********24栏960布局 gap=2*10***************/
+.titleBar{background: #B42527;height: 28px;}
+.titleBar h3{display: inline;font-weight: bold;color: #FFFFFF;float: left;font-size: 14px;height: 25px;line-height: 25px;font-weight: normal;padding-left: 42px;background: url(../images/titleIcon.png);background-repeat: no-repeat;}
+.titleBar a.more{float: right;position: relative;top: 5px;right: 10px;color: #FFF}
+.columnList, .columnArticle{border: 1px solid #CC7F91;padding: 5px;border-top: 0}
+.span18 .columnList, .span18 .columnArticle{border: none}
+.columnList ul li {height: 19px;*height: 16px;padding-top: 3px;padding-left: 12px;background: url(../images/arrow.png);background-position: left center;background-repeat: no-repeat; *background-position: left 100%;}
+.columnList ul{*margin-top: -10px;}
+.columnList ul li a,.columnList ul li span{*position: relative;*top: 5px;float: left;}
+.columnList ul li span{float: right}
+.links{padding: 0;margin-top: 5px}
+.links li{padding: 2px;}
+.links li a{display: block;text-align: center;border: 1px solid #DAA5B0;}
+.links li a img{height:38px;}
+.detailPage .leftNav{float: left;width: 230px;*display: inline;background: #e7e7e7;*height: 300px}
+.detailPage .leftNav h3{text-align: center;font-weight: bold;color: #FFF;font-size: 16px;background: #992727;height: 30px;line-height: 30px}
+.detailPage .span18{background: #fff;border-left: 10px solid #fff;margin-top: 0;}
+.detailPage #main{background: #e7e7e7;margin-top: 10px}
+.columnArticle{padding: 10px}
+.columnArticle h3{text-align: center;margin-top: 10px;}
+.columnArticle h5{text-align: center;margin-top: 5px;margin-bottom: 10px}
+.columnArticle p{text-indent: 2em;line-height: 24px}
+
